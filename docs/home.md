@@ -1,12 +1,14 @@
 ![Lab Overview](images/flightschool.png)
 
-# Welcome to Aviatrix FlightSchool!  
+# Welcome to StackGuardian Hands-on Workshop!  
 
-This Lab Guide will guide you through the different parts of Aviatrix FlightSchool.
+This document will guide you through the different parts of StackGuardians Hands-on Workshop.
 
-During this hands on deep dive session, you will gain knowledge and experience in these areas:
+During this deep dive session, you will gain knowledge and experience in these areas:
 
-* Experience how easy it is to build and orchestrate networking in the cloud
-* Experience advanced network operations with Flight Path & Co-Pilot
-* Segment, secure and automate routing within your cloud environment
-* Technical deep dive: Aviatrix deployment with Terraform
+* Experience the StackGuardians platform in action
+* Simplify deployment of Infrastructure as Code
+* Collaborate on IaC and drive standardisation via blueprints
+* Offload Cloud infrastructure teams by building production-grade ready infrastructure and enabling self-service
+* Identifying current shortcomings/misconfigurations in cloud environments
+* Prevent misconfiguration through guardrails, built in approval process and continuous compliance 
