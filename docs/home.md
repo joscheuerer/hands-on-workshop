@@ -1,4 +1,4 @@
-![Lab Overview](images/workshop-home.png)
+![Lab Overview](image/workshop-home.png)
 
 # StackGuardian Hands-On Workshop!  
 
