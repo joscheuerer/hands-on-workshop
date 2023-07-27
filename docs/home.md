@@ -1,8 +1,8 @@
-![Lab Overview](images/flightschool.png)
+![Lab Overview](images/workshop-home.png)
 
-# Welcome to StackGuardian Workshop!  
+# StackGuardian Hands-On Workshop!  
 
-This document will guide you through the different parts of StackGuardians Hands-on Workshop.
+This document will guide you through the different parts of the StackGuardian Hands-On Workshop.
 
 During this deep dive session, you will gain knowledge and experience in these areas:
 
