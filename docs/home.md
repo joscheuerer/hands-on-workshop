@@ -1,6 +1,6 @@
 ![Lab Overview](images/flightschool.png)
 
-# Welcome to StackGuardian Hands-on Workshop!  
+# Welcome to StackGuardian Workshop!  
 
 This document will guide you through the different parts of StackGuardians Hands-on Workshop.
 
