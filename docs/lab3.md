@@ -1,17 +1,29 @@
-# Lab 3  
+# Usecase 3 - Build Architecture
 
-## Security Features
+## Overview - What's in the section?
 Lab time: ~45 minutes  
 
-In this lab, we are going to explore some of the security features that Aviatrix provides. Currently we have open and unlimited communication between all VPC’s and VNET’s and Site2Cloud connection. We rely on security groups/NSG’s to secure the workloads. But what if we need more deliberate segmentation? Aviatrix provides the concept of Security Domains. Let’s see how these work and what they can do for us.
+In this part of the workshop, we are going to show the power of combining multiple templates and protocols into one infrastructure stack. This allows to build also complex architectures and make it available across departments to the whole organisation. No need to reinvent the wheel over and over again. 
+To summarise we want to achieve the following:
 
-## Lab 3.1 - Enable Segmentation on Transit Gateways
+* Build production-grade architecture
+* Combine multiple protocols in a IaC Group
+* Deploy the infrastructure stack with NoCode interface
+* Self-service for developers and business lines
+
+![Usecase 3](image/usecase3.png)
+_Fig. Build Architectures in StackGuardian_
+
+## Lab 3.1 - Deploy EKS cluster from IaC Group
 ### Description
-Until now we have set up a relatively flat any to any network.  Now let's see how we can segment our network by using Aviatrix Multi-Cloud Network Segmentation.
-### Validate
-Go to **_Multi-Cloud Transit -> Segmentation_**. First we need to enable segmentation for all 3 transit gateways.  
-![Lab Overview](images/enable-segmentation.png)  
-_Fig. Enable Segmentation_   
+Until now we were only dealing with low level templates which are VPCs, VMs, Storage Account, Resource Group. Now we are arranging them into production-grade infrastructure, that allows organisations to standardize their deployments. 
+### EKS-Cluster
+In the marketplace we will use the predefined IaC Group for EKS-Cluster. Choose **workshop Templates** and **IAC Groups** on the left. Then select the **aws-eks-cluster** IaC Group. 
+
+![IaC Group](image/iac-group.png)  
+_Fig. IaC Groups in the StackGuardian Marketplace_   
+
+Under **Templates** 
 
 Select the gateway and click enable. **Make sure to do this for all 3 transit gateways**.
 
