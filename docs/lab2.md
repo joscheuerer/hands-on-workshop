@@ -15,7 +15,7 @@ The goal of this usecase is to show:
 ![Usecase 2](image/usecase2.png)
 _Fig. Use the marketplace to manage and deploy templates_
 
-## 2.1 - Deploy the the same AWS VPC from the marketplace
+## 2.1 - Create template in marketplace
 ### Description
 In 2.1. we will see how to create a new template in the private marketplace, which is only visible in your own organisation. FYI, we will not deploy this template for a AWS VPC because it will need to many parameters to be set. 
 In 2.2 we will leverage the public marketplace to find one that is pointing to the same repo but with a nice NoCode interface and only a few parameters to define. 
@@ -23,7 +23,7 @@ In 2.2 we will leverage the public marketplace to find one that is pointing to t
 ### Create template in marketplace
 On the left top click on the 9 dots next to Orchestrator and then on **Marketplace**
   
-![Marketplacelink](image/marketplacelink.png)  
+![Marketplacelink](image/marketplacelink.png | width= 200)  
 _Fig. Marketplace Link_  
   
 Once on the marketplace you can check out the different links or jsut continue to **Create Template +** which you can find on the right side of the screen.
@@ -31,6 +31,11 @@ Once on the marketplace you can check out the different links or jsut continue t
 ![Create Template](image/marketplace.png) 
 _Fig. Create teamplate on marketplace_  
   
+
+
+
+
+
 By default, it will use the assigned CIDR to add a private and public subnet to each availability zone in AWS. As of version 6.1, we can modify this behavior in the Advanced settings. Click add new again from the Create a VPC window and have a look at these settings. Try creating and deleting some VPC’s and VNET’s.
 ### Expected Results
 Our environment now looks like this:  
