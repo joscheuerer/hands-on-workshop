@@ -23,7 +23,7 @@ In 2.2 we will leverage the public marketplace to find one that is pointing to t
 ### Create template in marketplace
 On the left top click on the 9 dots next to Orchestrator and then on **Marketplace**
   
-![Marketplacelink](image/marketplacelink.png | width= 200)  
+![Marketplacelink|200](image/marketplacelink.png)  
 _Fig. Marketplace Link_  
   
 Once on the marketplace you can check out the different links or jsut continue to **Create Template +** which you can find on the right side of the screen.
