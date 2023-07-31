@@ -38,8 +38,24 @@ If you like, you can add Tags and description to it as well.
 In this exercise we will deploy a resource from an existing repository. This should demonstrate, how simple it is to reuse the code that was already written within the organisation. In this case we will use a public repository from StackGuardian, but it could also be a private one.
 
 ### Create workflow
-Click on your newly created workflow group **wfg-xx** and in there on the button **Create New Workflow** - **Use Form**. 
-**Workflow Name** = ``repo-vpc-xx``
+
+1. Click on your newly created workflow group **wfg-xx** 
+2. Click the button **Create New Workflow** - **Use Form**.
+3. **Workflow Name** = ``repo-vpc-xx``
+4. Click **Next**
+5. Choose integration = **AWS-Deploy-Role**
+6. Click **Next** 
+7. The form should read the following entries
+    * Workflow Type = terraform
+    * ``Un-select`` 'Use Marketplace IAC Template'
+    * Source Destination Kind = github.com
+    * Repository URL = https://github.com/StackGuardian/terraform-aws-vpc  
+    * The rest leave empty
+    * Hit **Save**
+
+
+
+
 ### Expected Results
 Accounts in GCP, AWS and Azure have already been onboarded and you should see the three accounts in the list.  The accounts should also be green, meaning the permissions in the accounts are correctly configured.
 

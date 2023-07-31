@@ -1,1 +1,1 @@
-# flightschool-docs
+# Hands-On Workshop
