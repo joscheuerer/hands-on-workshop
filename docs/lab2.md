@@ -18,36 +18,45 @@ _Fig. Use the marketplace to manage and deploy templates_
 ## 2.1 - Create template in marketplace
 ### Description
 In 2.1. we will see how to create a new template in the private marketplace, which is only visible in your own organisation. FYI, we will not deploy this template for a AWS VPC because it will need to many parameters to be set. 
-In 2.2 we will leverage the public marketplace to find one that is pointing to the same repo but with a nice NoCode interface and only a few parameters to define. 
+In 2.2 we will leverage the public marketplace to find a template that is pointing to the same repo but with a nice NoCode interface.
 
 ### Create template in marketplace
 On the left top click on the 9 dots next to Orchestrator and then on **Marketplace**
   
-![Marketplacelink|200](image/marketplacelink.png)  
+![Marketplacelink](image/marketplacelink.png)  
 _Fig. Marketplace Link_  
   
 Once on the marketplace you can check out the different links or jsut continue to **Create Template +** which you can find on the right side of the screen.
 
 ![Create Template](image/marketplace.png) 
-_Fig. Create teamplate on marketplace_  
-  
+_Fig. Create template on marketplace_  
+
+1. Template Name = ``vpc-xx``
+2. Source Config Kind = **TERRAFORM**
+3. Source Destination Kind = **github.com**
+4. Repository URL = ``https://github.com/StackGuardian/terraform-aws-vpc``
+5. Click **Generate No Code Form**
+6. Scroll all the way down and **Create**
+
+Explore first alone and then together with the instructor the different tabs Usage, Analysis, Code and Meta. 
+The **NoCode** tab will be used to adjust the generated NoCode interface for the specific needs. 
 
 
-
-
-
-By default, it will use the assigned CIDR to add a private and public subnet to each availability zone in AWS. As of version 6.1, we can modify this behavior in the Advanced settings. Click add new again from the Create a VPC window and have a look at these settings. Try creating and deleting some VPC’s and VNET’s.
-### Expected Results
-Our environment now looks like this:  
-![Topology](images/topology2.png)  
-_Fig. Topology_  
-
-Check out the CoPilot Topology View.  Do you see the newly created Transit VPC?
-
-## Lab 2.2 - Deploy the Aviatrix transit gateway
+## 2.2 - Deploy an AWS VPC from an existing template
 ### Description
-In this exercise we are going to launch the Aviatrix transit gateway in the newly created Transit VPC in AWS. 
-### Validate
+In this exercise we will deploy a VPC from the marketplace.  
+
+### Deploy from template
+In the marketplace overview select **workshop Templates** and **Infrastructure as Code**. This is the private marketplace for the workshop organisation and only visible to the members of workshop. 
+In the top search bar type ``vpc``. This should show you the **terraform-aws-vpc-stripped** IaC template. Go ahead and check out what is inside.
+
+![VPC template](image/vpctemplate.png) 
+_Fig. VPC template in marketplace_  
+
+
+
+
+
 Browse to **_Multi-Cloud Transit -> Setup_** and launch a new transit gateway via step 1 with the settings below.  
 
 The VPC ID will differ from your environment, but we will select the VPC that we just created and named _aws-transit_. For the public subnet, use the one that has _Public-gateway_ in the name and is located in availability zone _a_. You can click on any of the info buttons if you want to understand what the other settings relate to. Click create when you are ready. This will take a few minutes, have a coffee.  
