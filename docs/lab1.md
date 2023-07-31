@@ -15,26 +15,31 @@ In this section, we are going to explore StackGuardian platform. We prepare the 
 ![UseCase 1](image/usecase1.png)
 _Fig. Deploy directly from exisiting repository_
 
-## Lab 1.1 - Aviatrix Controller
+## 1.1 - Setup the environment
 ### Description
-Navigate and login to the Aviatrix Controller.
-### Validate
-Open your browser and navigate to:
+Login to StackGuardian platform on https://app.stackguardian.io/. You should have received the invitation to the organisation called 'workshop' via email (check also your spam folder). 
+If nothing arrived, please let the instructors know and they will be able to help you. 
 
-**URL:** ```https://ctrl.pod[x].aviatrixlab.com```  
-**User:** ```admin```  
-**Password:** ```Password123!```
+### Assigned number xx for the workshop
+Every participant will receive a two digit number (xx) for the workshop. You will be able to find them in the chat or on the slides of the instructor. Please memorize the number - you will need it throughout the different usecases.
 
-* _(replace **[x]** with your pod ID)_
+### Create your own Workflowgroup
+A workflow group is like your own project, where you will be deploying resources into. It is also used to enforce policies later on. 
+In the upper part of the screen click on **Workflow Groups**. In there **Create New Workflow Group** with:
 
-### Expected Results
-Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
+**Resource Name** = ```wfg-xx``` (xx is your assigned number)
 
-## Lab 1.2 - Access Accounts
+If you like, you can add Tags and description to it as well. 
+
+
+
+## 1.2 - Deploy AWS VPC from exisiting repository
 ### Description
-In order for the controller to be able to access the different CSP environments, we need to provide it with accounts with the correct privileges.
-### Validate
-Have a look at the access accounts already set up under **_Accounts -> Access Accounts_**    
+In this exercise we will deploy a resource from an existing repository. This should demonstrate, how simple it is to reuse the code that was already written within the organisation. In this case we will use a public repository from StackGuardian, but it could also be a private one.
+
+### Create workflow
+Click on your newly created workflow group **wfg-xx** and in there on the button **Create New Workflow** - **Use Form**. 
+**Workflow Name** = ``repo-vpc-xx``
 ### Expected Results
 Accounts in GCP, AWS and Azure have already been onboarded and you should see the three accounts in the list.  The accounts should also be green, meaning the permissions in the accounts are correctly configured.
 
