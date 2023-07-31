@@ -25,7 +25,7 @@ Every participant will receive a two digit number (xx) for the workshop. You wil
 
 ### Create your own Workflowgroup
 A workflow group is like your own project, where you will be deploying resources into. It is also used to enforce policies later on. 
-In the upper part of the screen click on **Workflow Groups**. In there **Create New Workflow Group** with **Resource Name** = ```wfg-xx``` (xx is your assigned number)
+In the upper part of the screen click on **Workflow Groups**. In there **Create New Workflow Group** with **Resource Name** = ``wfg-xx`` (xx is your assigned number)
 
 If you like, you can add Tags and description to it as well. 
 
