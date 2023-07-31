@@ -1,12 +1,19 @@
-# Lab 1
+# UseCase 1
 
-## Lab Overview - What's in the lab?
-Lab time: ~20 minutes
+## Overview - What's in the section?
+Time: ~15 minutes
 
-In this lab, we are going to explore our lab environment. The diagram below shows the current state of the lab environment. You will extend this environment during the exercises. The instructor will briefly explain the lab setup in the diagram. You can find a more complete and detailed diagram here.
+In this section, we are going to explore StackGuardian platform. We prepare the setup for current and upcoming sections. The task for usecase 1 is to deploy a AWS VPC from an exisiting github repository. This will show the following capabilities of the StackGuardian platform: 
 
-![Lab Overview](images/lab-before.png)
-_Fig. Lab Overview_
+* SG builds a pipeline to deploy resources in Cloud
+* Check infrastructure for misconfiguration
+* Manage Terraform State
+* Approval for workflows
+* Schedule to build and destroy infrastructure
+
+
+![UseCase 1](image/usecase1.png)
+_Fig. Deploy directly from exisiting repository_
 
 ## Lab 1.1 - Aviatrix Controller
 ### Description
