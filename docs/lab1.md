@@ -54,7 +54,9 @@ In this exercise we will deploy a resource from an existing repository. This sho
 ![Deployfromrepo](image/deployfromrepo.png)
 
 
-### More points to explore for you or with instructor
+### More points to explore for you and with instructor
+After the first exercise you can try the different tabs in the workflow you just created. Also the instructor will go through the following points with the group:
+
 * Approval for workflow
 * Schedule create or destroy for specific times
 * State management
