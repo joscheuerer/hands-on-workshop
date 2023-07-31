@@ -60,7 +60,7 @@ To deploy the VPC open the latest Revision on the left side and click **Create W
 ![VPC revision](image/vpctemplate.png) 
 _Fig. Create VPC from latest revision_  
 
-To create the workflow fill in following values - remember to substitute the **xx** with your number: 
+To create the workflow, fill in following values - remember to substitute the **xx** with your assigned number: 
 
 1. Select Workflow Group = **wfg-xx**
 2. Click **Next**
@@ -78,4 +78,5 @@ To create the workflow fill in following values - remember to substitute the **x
 11. Click **Save & Run**
 
 In the **Runs** tab you can follow the deployment. Once the VPC is ready, the Status will change to **Completed**. 
-This concludes the 2nd usecase.
+
+**This concludes the 2nd exercise**

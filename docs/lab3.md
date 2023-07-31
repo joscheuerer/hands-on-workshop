@@ -14,170 +14,91 @@ To summarise we want to achieve the following:
 ![Usecase 3](image/usecase3.png)
 _Fig. Build Architectures in StackGuardian_
 
-## Lab 3.1 - Deploy EKS cluster from IaC Group
+## 3.1 - Closer Look at the EKS cluster IaC Group
 ### Description
 Until now we were only dealing with low level templates which are VPCs, VMs, Storage Account, Resource Group. Now we are arranging them into production-grade infrastructure, that allows organisations to standardize their deployments. 
+
 ### EKS-Cluster
 In the marketplace we will use the predefined IaC Group for EKS-Cluster. Choose **workshop Templates** and **IAC Groups** on the left. Then select the **aws-eks-cluster** IaC Group. 
 
 ![IaC Group](image/iac-group.png)  
 _Fig. IaC Groups in the StackGuardian Marketplace_   
 
-Under **Templates** 
+In the tab **Templates** you can see, that this IaC Group consists of three templates: 
+* EKS Cluster - Terraform
+* EKS Cluster Nodes - Terraform
+* NginX Service - Helm Chart
 
-Select the gateway and click enable. **Make sure to do this for all 3 transit gateways**.
+By clicking **Edit Template Defaults** from **terraform-aws-eks-managed-node-group-stripped** you can investigate how the different modules are interconnected. After scrolling down and looking at **Name of existing EKS cluster** the value is a reference to parameter of the previous template in the IaC group. The little wheel on the right hand side helps, to create this reference. 
+There are more things to explore but lets get started with the deployment. Close the modal on the top right.
 
-### Expected Results
-Now that segmentation is enabled on the transits, we can continue and build out Security Domains.
-
-## Lab 3.2 - Create Security Domains
+## 3.2 - Deploy the EKS cluster 
 ### Description
-Now we are going to create some security domains, which we can use for segmentation.
+We will use the previously deployed VPC from the marketplace (section 2.2) and deploy the EKS Cluster into it. 
 
-### Validate
-Go to **_Multi-Cloud Transit -> Segmentation -> step 2_** , create the following security domains: _Red_, _Blue_, _Shared_ and _Onprem_.  
 
-![Lab Overview](images/sec-domains.png)  
-_Fig. Create Security Domains_  
+### EKS-Cluster
+To deploy the Cluster open the latest revision of the **aws-eks-cluster** IaC Group and click **Create Stack**. 
+The following values are to be filled in for the stack - **xx** being your assigned number: 
 
-### Expected Results
-The 4 security domains should now be created.
+1. Select Workflow Group = **wfg-xx**
+2. Enter Stack Name = ``eks-xx``
+3. Hit **Next**
 
-## Lab 3.3 - Create Connection Policies
-### Description
-In order to specify allowed Security Domain to Security Domain communication, we need to set up some Connection Policies.
-### Validate
-Go to **_Multi-Cloud Transit -> Segmentation -> step 3_** and modify the _Shared_ security domain so it is connected to _Red_ and _Blue_. Also connect security domain _Onprem_ to _Red_.  
+4. Choose Integrations = **AWS-Deploy-Role**
+5. Cluster Name = ``eks-xx``
+6. Cluster Version = ``1.25``
+7. Subnet IDs for Cluster 
+    * Click little wheel next to the textbox
+    * Workflow Group Name = **wfg-xx**
+    * Stack Name = _leave empty_
+    * Workflow Name = **marketplace-vpc-xx**
+    * Output Key = ``public_subnets.value``
+    * Click **OK**
 
-![Lab Overview](images/connection-policies.png)  
-_Fig. Connection Policies_  
+![Subnet IDs](image/public-subnets.png)
+_Fig. Subnet IDs for Cluster_
 
-### Expected Results
-The above connection policies should now be created.
+8. Default Security Group ID
+    * Click little wheel next to the textbox
+    * Workflow Group Name = **wfg-xx**
+    * Stack Name = _leave empty_
+    * Workflow Name = **marketplace-vpc-xx**
+    * Output Key = ``default_security_group_id.value``
+    * Click **OK**
 
-## Lab 3.4 - Add VPC’s/VNET’s/S2C to Security Domains
-### Description
-Now we will add each of the Spokes and On-Prem connection to the security domains.
-### Validate
-Go to **_Multi-Cloud Transit -> Segmentation_** and on the tabs on the top of the page, go to **_Build_**. Create the following associations:
+![Default Security Group ID ](image/security-group.png)
+_Fig. Default Security Group ID_
 
-| Transit Gateway Name | Attachment Name | Security Domain Name |
-| ------ | ----------- | ---------- |
-| aws-transit   | aws-spoke1 | Red |
-| aws-transit   | aws-spoke2 | Blue |
-| aws-transit   | shared-service | Shared |
-| gcp-transit   | gcp-spoke1 | Red |
-| azure-transit   | azure-spoke1 | Blue |
-| gcp-transit   | MyOnPrem | Onprem |
-		
-![Lab Overview](images/sec-domain-attachments.png)  
-_Fig. Security Domain Attachments_  
+9. Click **Next**
 
-### Expected Results
-Once you have done this, have a look at the Security Domain overview in CoPilot. You will find it by clicking **_Security_** in the menu. This should help you clearly understand the Security Domains and the Connection Policies.
+10. Choose Integrations = **AWS-Deploy-Role**
+11. Name of Managed Node Group = ``eks-managed-node-xx`` 
+12. Subnet IDs for Cluster Nodes
+    * Click little wheel next to the textbox
+    * Workflow Group Name = **wfg-xx**
+    * Stack Name = _leave empty_
+    * Workflow Name = **marketplace-vpc-xx**
+    * Output Key = ``public_subnets.value``
+    * Click **OK**
 
-## Lab 3.5 - Connectivity Tests
-### Description
-Now that we have created our segmentation and connection policies, let’s test what connectivity is possible.
-### Validate
-* Connect into AWS-SRV1
-* Run the following commands:
-```
-ping aws-srv2-priv.pod[x].aviatrixlab.com
-ping azure-srv1-priv.pod[x].aviatrixlab.com
-ping gcp-srv1-priv.pod[x].aviatrixlab.com
-ping shared-priv.pod[x].aviatrixlab.com
-ping onprem-cne-priv.aviatrixlab.com
-```
+![Subnet IDs](image/public-subnets.png)
+_Fig. Subnet IDs for Cluster Nodes_
 
-> Can you explain why some ping’s were successful and others weren’t?
+13. Click **Next**
 
-* Connect into AWS-SRV2
-* Run the following commands:
-```
-ping aws-srv1-priv.pod[x].aviatrixlab.com
-ping azure-srv1-priv.pod[x].aviatrixlab.com
-ping gcp-srv1-priv.pod[x].aviatrixlab.com
-ping shared-priv.pod[x].aviatrixlab.com
-ping onprem-cne-priv.aviatrixlab.com
-```
+14. Choose Integrations = **AWS-Deploy-Role**
+15. K8S_CLUSTER_NAME = ``eks-xx``
+16. Click **Next**
 
-> Can you explain why some ping’s were successful and others weren’t?
+17. Hit **Create and Execute Workflows**
+18. **Go to created stack**
 
-### Expected Results
-Connectivity tests should only be successful when the necessary Connection Policies are in place between two Security Domains.
+Well done! After a few seconds the workflow on the right starts running and deploys the EKS cluster. 
+A stack automatically chains the workflow with each other, that means when one workflow finishes, it kicks off the next one in row until the whole stack is deployed. 
 
-## Lab 3.6 - FQDN Filtering
-### Description
-Another security feature the Aviatrix gateways provide, is FQDN filtering. A common challenge in the cloud is protecting cloud instances from accessing untrusted destinations on the internet. We want to make sure they can only gain access to trusted destinations, like update servers, known API endpoints, etc. FQDN based filtering does exactly that, without having to maintain a list of trusted IP addresses in a NSG or SG.
+![Stack Deploy](image/stack-deploy.png)
+_Fig. Stack of EKS Cluster being deployed_
 
-FQDN Egress filtering is supported in multiple clouds, but we are going to configure it in AWS. AWS has the concept of public and private subnets. Aviatrix can apply FQDN egress filtering on both types of networks. Because our test instances are in the public subnet, we need to set up our environment to filter traffic for public instances.
 
-![Egress Diagram](images/egress-diagram.png)  
-_Fig. Egress Diagram_  
-
-### Validate
-First, we are going to deploy a Public Filtering Subnet and a gateway which will do the actual FQDN egress filtering. Go to the **_Security -> Public Subnet_** page. Click **_Add New_**. Create the gateway according to the settings shown below. In order to select all routing tables, you can use shift or control.  
-
-![Egress Gateway Spoke1](images/egress-gw1.png)  
-_Fig. Egress Gateway Spoke1_  
-
-We need to create another gateway for our second AWS spoke. Create it with the below settings.
-
-![Egress Gateway Spoke2](images/egress-gw2.png)  
-_Fig. Egress Gateway Spoke2_  
-
-All egress traffic for the subnets that are attached to the selected route tables is now being routed through the filtering gateway. The controller took care of adjusting the routing for us.
-
-Let’s create a new tag for FQDN filtering. A tag is list of domains that are allowed or denied. We can create multiple tags and we can attach multiple tags to gateways.
-
-Go to the **_Security -> Egress Control_** page. Go to step 3 and click **_New Tag_**. Create the following tags: _Spoke1_, _Spoke2_ and _All Spokes_.
-
-We are going to create these tags and add the following domains. **Make sure to hit save and update before you click close!**  
-
-| Tag | Domain | Protocol & Port | Action |
-| ------ | ----------- | ---------- | ---------- |
-| All Spokes   | www.github.com | ICMP / Empty | Base Policy |
-| Spoke1   | www.microsoft.com | ICMP / Empty | Base Policy |
-| Spoke2   | www.ubuntu.com | ICMP / Empty | Base Policy |
-
-![Egress Tags](images/egress-tags.png)  
-_Fig. Egress Tag Config_  
-
-Next, we need to enable the tags:
-
-![Enable Egress Tags](images/enable-egress-tags.png)  
-_Fig. Enable Egress Tags_  
-
-These tags are not yet assigned to our gateways, so they are not yet filtering any traffic. Click **_Attach Gateway_**, and attach the tags as follows:
-
-| Tag | Gateways |
-| ------ | ----------- |
-| All Spokes   | psf-01, psf-02 |
-| Spoke1   | psf-01 |
-| Spoke2   | psf-02 |
-
-* Connect into AWS-SRV1 (If you are having trouble connecting, disable the tags, try to connect again and then re-enable the tags)
-* Run the following commands:
-```
-ping www.github.com
-ping www.microsoft.com
-ping www.ubuntu.com
-```
-
-> Can you explain why some ping’s were successful and others weren’t?
-
-* Connect into AWS-SRV2
-* Run the following commands:
-```
-ping www.github.com
-ping www.microsoft.com
-ping www.ubuntu.com
-```
-
-> Can you explain why some ping’s were successful and others weren’t?
-
-You can use the same gateways to filter ingress traffic, with [Aviatrix ThreatIQ and ThreatGuard](https://aviatrix.com/resources/solution-briefs/threatiq-threatguard-datasheet-fnl)! Feel free to play around with this if you have some time.
-
-### Expected Results
-The Egress gateways should only allow communication to the URLs specified in the tags, and all other Internet bound traffic should be dropped.
+**It is time to lay back and let StackGuardian do the work.**
