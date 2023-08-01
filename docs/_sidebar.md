@@ -8,4 +8,4 @@
 -  [Summary + Feedback](summary.md)
 
 **PROJECT INFO**  
-* [GitHub Repository](https://github.com/joscheuerer/hands-on-workshop)
+* [GitHub Repository](https://github.com/StackGuardian/hands-on-workshop)
