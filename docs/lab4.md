@@ -32,7 +32,7 @@ On the left side you can find the different Best Practice checks like Cost, CIS 
 Thirith policies can be used for different purposes. In this section we will see, what happens when policies pass or fail.
 
 ### Pass or Fail 
-Navigate in the **orchestrator** to **Policies**. Open **define-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met. 
+Navigate in the **Orchestrator** to **Policies**. Open **define-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met. 
 When a new policy is introduced, it might be advisable to just **Warn** the user to follow it. After some weeks it might be necessary to drive correct behaviour and enable the **Approval Process**. This keeps the workflow from deploying until the approving person(s) cleared or declined the request. For security or regulatory policies it could be necessary to set a strict **Fail**, in this case the workflow is stopped before deploying resources to the cloud accounts. 
 
 ![Policy Actions](image/policy-actions.png)  
