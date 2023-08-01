@@ -32,7 +32,7 @@ On the left side you can find the different Best Practice checks like Cost, CIS 
 Thirith policies can be used for different purposes. In this section we will see, what happens when policies pass or fail.
 
 ### Pass or Fail 
-Navigate in the **orchestrator** to **Policies**. Open **define-necessary-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met. 
+Navigate in the **orchestrator** to **Policies**. Open **define-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met. 
 When a new policy is introduced, it might be advisable to just **Warn** the user to follow it. After some weeks it might be necessary to drive correct behaviour and enable the **Approval Process**. This keeps the workflow from deploying until the approving person(s) cleared or declined the request. For security or regulatory policies it could be necessary to set a strict **Fail**, in this case the workflow is stopped before deploying resources to the cloud accounts. 
 
 ![Policy Actions](image/policy-actions.png)  
@@ -43,7 +43,7 @@ _Fig. Passing or Failing the policy_
 We will look at a policy for terraform resources and attributes itself and see how it is structured.
 
 ### Guardrail IaC attributes
-When scrolling down in the **define-necessary-tags-eks-node** policy to the section called **Tirith Policy**, we find the Select Provider set to **Terraform Plan**. This shows us, that the policy will operate on resources and attributes of the terraform plan. 
+When scrolling down in the **define-tags-eks-node** policy to the section called **Tirith Policy**, we find the Select Provider set to **Terraform Plan**. This shows us, that the policy will operate on resources and attributes of the terraform plan. 
 While the Operation Type is set to **Check for terraform resource attribute**, the policy will evaluate from the Cloud Provider AWS the resource **aws_eks_node_group**. When you click on the attribute box you will see all the possible attributes that the specfic resource could have and can build a policy around it. 
 In our case we look at the attribute **tags** and check if it contains the key:value pair **costcenter:workshop**. 
 
@@ -59,13 +59,10 @@ Policies can also be based on terraform actions, i.e. create or delete.
 
 ### Policy based on terraform action
 On the policy page select **prevent-vpc-destroy** and to the **Rules**. 
-In this policy the Operation Type changed to **Check for terraform action**. It is evaluting if the action on resource **aws_vpc** is **delete**. This would mean that only a delete operation is allowed on the terraform resource. But there is a way to invert this with the **Final Expression**. ``!``eval-id-1 means that every operation is allowed but **NOT** a delete operation.
+In this policy the Operation Type changed to **Check for terraform action**. It is evaluting if the action on resource **aws_vpc** is **delete**. This would mean that only a delete operation is allowed on the terraform resource. But there is a way to invert this with the **Final Expression**. ``!eval-id-1`` means that every operation is allowed but **NOT** a delete operation.
 
 ![Terraform Action](image/policy-delete.png)  
-_Fig. Policy based on terraform action_  
-
-
-
+_Fig. Policy to prevent deletion of resources_  
 
 
 ## 4.5 - Tirith policy on Cost
@@ -80,21 +77,16 @@ _Fig. Tirith Policy for Cost_
 
 
 
-
-
-
-
-## Lab 4.3 - AppIQ
+## 4.6 - Activate Policies on Workflow Groups
 ### Description
-**AppIQ** is every cloud operator’s best friend and will always help to find that needle in a haystack.  When a connectivity issue arises between VPCs, regions, clouds, there are many places in the cloud infrastructures that need to be checked.  AppIQ query the cloud providers and show whether Routing at the VPC, Subnet, Gateways, NACLs, and Security Groups are configured correctly at Source and Destination to properly allow the communication.
-### Validate
-Open CoPilot and navigate to **_AppIQ_**.
-* In the **Source Instance** dropdown, select the instance _gcp-srv1_
-* In the **Destination Instance** dropdown, select the instance _shared-srv_
-* Enter port _443_, select the _Private interface_ and click **Submit**
+After investigating the policies, now is the time to apply them to different workflows and see the result. 
+### Activate Policy
+On the Policy page click on the three lines next to **define-tags-eks-node** and choose **Clone**. As Resource Name for the cloned policy enter ``define-tags-eks-node-xx`` and **Create**. On the Meta tab of the new policy open **Workflow Groups**, then click your own **wfg-xx** and select **All current & future stacks & Workflows**.  Hit **Save** 
 
-![AppIQ](images/appiq-config.png)  
-_Fig. AppIQ_  
+![Activate Policy](image/activate-policy.png)  
+_Fig. Activate policy on Workflow Group_  
+
+
 
 ### Expected Results
 AppIQ will show you the path between the selected VMs, will show the latency on each hop, Gateway utilization on each hop and all infrastructure related settings (security groups, route tables, etc).  Scroll through the results - sometimes a simple thing like a missing security group rule can take hours to troubleshoot, but with AppIQ you can get find the issues in seconds or minutes.  
