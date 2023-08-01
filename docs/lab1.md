@@ -3,7 +3,7 @@
 ## Overview - What's in the section?
 Time: ~15 minutes
 
-In this section, we are going to explore StackGuardian platform. We prepare the setup for current and upcoming sections. The task for usecase 1 is to deploy a AWS VPC from an exisiting github repository. This will show the following capabilities of the StackGuardian platform: 
+In this section, we are going to explore StackGuardian platform. We prepare the setup for current and upcoming sections. The task for usecase 1 is to deploy a AWS VPC from an existing github repository. This will show the following capabilities of the StackGuardian platform: 
 
 * SG builds a pipeline to deploy resources in Cloud
 * Check infrastructure for misconfiguration
@@ -13,7 +13,7 @@ In this section, we are going to explore StackGuardian platform. We prepare the 
 
 
 ![UseCase 1](image/usecase1.png)
-_Fig. Deploy directly from exisiting repository_
+_Fig. Deploy directly from existing repository_
 
 ## 1.1 - Setup the environment
 ### Description
@@ -23,11 +23,11 @@ If nothing arrived, please let the instructors know and they will be able to hel
 ### Assigned number xx for the workshop
 Every participant will receive a two digit number (xx) for the workshop. You will be able to find them in the chat or on the slides of the instructor. Please memorize the number - you will need it throughout the different usecases.
 
-### Create your own Workflowgroup
+### Create your own Workflow Group
 A workflow group is like your own project, where you will be deploying resources into. It is also used to enforce policies later on. 
 In the upper part of the screen click on **Workflow Groups**. In there **Create New Workflow Group** with **Resource Name** = ``wfg-xx`` (xx is your assigned number)
 
-If you like, you can add Tags and description to it as well. 
+If you like, you can add Tags and descriptions to it as well. 
 
 
 

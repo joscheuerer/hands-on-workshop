@@ -17,7 +17,7 @@ _Fig. Use the marketplace to manage and deploy templates_
 
 ## 2.1 - Create template in marketplace
 ### Description
-In 2.1. we will see how to create a new template in the private marketplace, which is only visible in your own organisation. FYI, we will not deploy this template for a AWS VPC because it will need to many parameters to be set. 
+In 2.1. we will see how to create a new template in the private marketplace, which is only visible in your own organisation. FYI, we will not deploy this template for a AWS VPC because it will need too many parameters to be set. 
 In 2.2 we will leverage the public marketplace to find a template that is pointing to the same repo but with a nice NoCode interface.
 
 ### Create template in marketplace
@@ -26,7 +26,7 @@ On the left top click on the 9 dots next to Orchestrator and then on **Marketpla
 ![Marketplacelink](image/marketplacelink.png)  
 _Fig. Marketplace Link_  
   
-Once on the marketplace you can check out the different links or jsut continue to **Create Template +** which you can find on the right side of the screen.
+Once on the marketplace you can check out the different links or just continue to **Create Template +** which you can find on the right side of the screen.
 
 ![Create Template](image/marketplace.png) 
 _Fig. Create template on marketplace_  
@@ -47,13 +47,13 @@ The **NoCode** tab will be used to adjust the generated NoCode interface for the
 In this exercise we will deploy a VPC from the marketplace.  
 
 ### Deploy from template
-In the marketplace overview select **workshop Templates** and **Infrastructure as Code**. This is the private marketplace for the workshop organisation and only visible to the members of workshop. 
+In the marketplace overview select **workshop Templates** and **Infrastructure as Code**. This is the private marketplace for the workshop organisation and only visible to the members of the workshop. 
 In the top search bar type ``vpc``. This should show you the **terraform-aws-vpc-stripped** IaC template. Go ahead and check out what is inside.
 
 ![VPC template](image/vpctemplate.png) 
 _Fig. VPC template in marketplace_  
 
-Check the Meta>Repo entry. It refers to the same repository, which we used in 2.1 to create the VPC template. Still, when you check the **NoCode** tab you see a huge difference - less paramters and also predefind values. Have a look at the **Show Schema** to understand what was changed in the JSON & UI Schema to achieve this. 
+Check the Meta>Repo entry. It refers to the same repository, which we used in 2.1 to create the VPC template. Still, when you check the **NoCode** tab you see a huge difference - less parameters and also predefined values. Have a look at the **Show Schema** to understand what was changed in the JSON & UI Schema to achieve this. 
 
 To deploy the VPC open the latest Revision on the left side and click **Create Workflow**.
 

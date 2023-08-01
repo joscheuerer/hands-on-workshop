@@ -1,9 +1,9 @@
 # Usecase 3 - Build Architecture
 
 ## Overview - What's in the section?
-Lab time: ~45 minutes  
+Time: ~45 minutes  
 
-In this part of the workshop, we are going to show the power of combining multiple templates and protocols into one infrastructure stack. This allows to build also complex architectures and make it available across departments to the whole organisation. No need to reinvent the wheel over and over again. 
+In this part of the workshop, we are going to show the power of combining multiple templates and protocols into one infrastructure stack. This allows us to build complex architectures and make them available across departments to the whole organisation. No need to reinvent the wheel over and over again. 
 To summarise we want to achieve the following:
 
 * Build production-grade architecture
@@ -16,7 +16,7 @@ _Fig. Build Architectures in StackGuardian_
 
 ## 3.1 - Closer Look at the EKS cluster IaC Group
 ### Description
-Until now we were only dealing with low level templates which are VPCs, VMs, Storage Account, Resource Group. Now we are arranging them into production-grade infrastructure, that allows organisations to standardize their deployments. 
+Until now we were only dealing with low level templates which are VPCs, VMs, Storage Account, Resource Group. Now we are arranging them into production-grade infrastructure that allows organisations to standardize their deployments. 
 
 ### EKS-Cluster
 In the marketplace we will use the predefined IaC Group for EKS-Cluster. Choose **workshop Templates** and **IAC Groups** on the left. Then select the **aws-eks-cluster** IaC Group. 
