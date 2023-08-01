@@ -1,4 +1,4 @@
-# UseCase 1 - Simple Deployment direct from repository
+# UseCase 1 - Simple Deployment from repository
 
 ## Overview - What's in the section?
 Time: ~15 minutes

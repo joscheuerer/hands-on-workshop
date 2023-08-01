@@ -53,7 +53,7 @@ Explore the policy settings further.
 _Fig. Tirith Policy for Tags_  
 
 
-## Lab 4.4 - Tirith policy on terraform action
+## 4.4 - Tirith policy on terraform action
 ### Description
 Policies can also be based on terraform actions, i.e. create or delete.
 
