@@ -1,4 +1,4 @@
-# Usecase 4 - Provide and Enforce Guardrails
+# Usecase 4 - Create and Enforce Guardrails
 
 ## Overview - What's in the section?
 Time: ~30 minutes  
@@ -59,7 +59,7 @@ Policies can also be based on terraform actions, i.e. create or delete.
 
 ### Policy based on terraform action
 On the policy page select **prevent-vpc-destroy** and to the **Rules**. 
-In this policy the Operation Type changed to **Check for terraform action**. It is evaluting if the action on resource **aws_vpc** is **delete**. This would mean that only a delete operation is allowed on the terraform resource. But there is a way to invert this with the **Final Expression**. ``!eval-id-1`` means that every operation is allowed but **NOT** a delete operation.
+In this policy the Operation Type changed to **Check for terraform action**. It is evaluating, if the action on resource **aws_vpc** is **delete**. This would mean that only a delete operation is allowed on the terraform resource. But there is a way to invert this with the **Final Expression**. ``!eval-id-1`` means that every operation is allowed but **NOT** a delete operation.
 
 ![Terraform Action](image/policy-delete.png)  
 _Fig. Policy to prevent deletion of resources_  
@@ -93,7 +93,7 @@ Now we are going to rerun the EKS Node deployment in the Stack and see how the p
 ![Run workflow](image/run-workflow.png)  
 _Fig. Run Workflow_  
 
-After a few minutes you will see that the workflow was failing because the tag policy was not met. In the **Overview** page click on **define-tags-eks-node-xx**. The evalution shows, that ``costcenter:workshop``is not present within the current tags. This stopped the workflow. 
+After a few minutes you will see that the workflow was failing because the tag policy was not met. In the **Overview** page click on **define-tags-eks-node-xx**. The evaluation shows that ``costcenter:workshop``is not present within the current tags. This stopped the workflow. 
 
 ![Workflow failed policy evaluation](image/policy-failed.png)  
 _Fig. Workflow failed policy evaluation_  
