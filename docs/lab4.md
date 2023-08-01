@@ -1,13 +1,33 @@
-# Lab 4  
+# Usecase 4 - Provide and Enforce Guardrails
 
-## Operations, Visibility and Troubleshooting
-Lab time: ~30 minutes  
+## Overview - What's in the section?
+Time: ~30 minutes  
 
-The focus of this lab will be on using all of the visibility provided by the Aviatrix platform to find that needle in a haystack.  By using Aviatrix, the customer owns the network and is able to have visibility into all traffic flows in the event that troubleshooting is needed.
+The focus of this exercise is on policies and guardrails. StackGuardian developed its own Open Source Policy Engine called Tirith. With Tirith you can enforce on resources and attributes like instance types, storage size or necessary tags but also on infrastructure cost and the workflow process. 
+The aim of this part is to demonstrate the following:
 
-## Lab 4.1 - Packet Capture
+* Identify Shortcomings in current deployments
+* Create and enforce proactive guardrails at deployment
+* Approval process and exception handling 
+* Drift detection and continuous compliance
+
+![Usecase 4](image/usecase4.png)
+_Fig. Create and enforce proactive policies_
+
+## 4.1 - Identify current shortcomings
 ### Description
-While operating a cloud environment, there are times where following and capturing packets is necessary.  The Aviatrix Controller allows you to centrally perform and generate packet captures from the Aviatrix Gateways.
+Indepent of the way the infrastructure in the Cloud Accounts is created, StackGuardian is analysing it in regards to Cost, Security, Compliance & Best Practises. 
+
+### Integrations page
+In the **Orchestrator** go to the **Integrations** tab and choose the **AWS-ReadOnly** account. 
+
+![Integrations](image/integrations.png)
+_Fig. Integrations page in Orchestrator_
+
+
+On the left side you can find the different Best Practice checks like Cost, CIS and PCI DSS. While on the right side you can go into more details to find out about specific **Fails** and how to mitigate them in the future with a proper **Build Tirith Policy**. Explore the integrations page for yourself and with the instructors. 
+
+## 4.2 - Enforce 
 ### Validate
 To start a packet capture, navigate to **_Troubleshoot -> Diagnostics -> Network -> Packet Capture_**.  Select one of the Aviatrix Gateways, the interface (eth0), optionally filter on host and/or port, and click _Start_.  Captured packets will be displayed live - click _Stop_ when finished, download the PCAP and open it in Wireshark.
 
