@@ -1,9 +1,9 @@
-# UseCase 1 - Simple Deployment from repository
+# UseCase 1 - Deployment from repository
 
 ## Overview - What's in the section?
 Time: ~15 minutes
 
-In this section, we are going to explore StackGuardian platform. We prepare the setup for current and upcoming sections. The task for usecase 1 is to deploy a AWS VPC from an existing github repository. This will show the following capabilities of the StackGuardian platform: 
+In this section, we are going to explore the StackGuardian platform and also prepare the environment for the current and upcoming sections. The task for usecase 1 is to deploy a AWS VPC from an existing github repository. This will touch following capabilities of our platform: 
 
 * SG builds a pipeline to deploy resources in Cloud
 * Check infrastructure for misconfiguration

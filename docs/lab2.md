@@ -3,13 +3,13 @@
 ## Overview - What's in the section?
 Time: ~30 minutes
 
-In this section, we will begin to make use of the StackGuardian marketplace, which can be seen as a library for templates and blueprints. But it is more than that - it also allows you to manage the versions and lifecycle of your IaC templates, across different protocols, combine multiple templates into a stack and use NoCode to deploy them. 
-The goal of this usecase is to show:
+In this section, we will begin to make use of the StackGuardian marketplace, which can be seen as a library for templates and blueprints. But it is more than that - it also allows you to manage the version and lifecycle of your IaC templates, across different protocols, combine multiple templates into a stack and use NoCode to deploy them. 
+The goal of this usecase is to demonstrate the following:
 
 * Standardize on blueprints and templates
 * Collaborate between teams in an organisation
-* NoCode Interface to simplify Deployment of infrastructure
-* Versioning and Lifecycle of templates
+* NoCode Interface to simplify deployment of infrastructure
+* Versioning and lifecycle of templates
 
 
 ![Usecase 2](image/usecase2.png)
