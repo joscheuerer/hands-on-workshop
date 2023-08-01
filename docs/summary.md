@@ -1,13 +1,16 @@
-# Summary  
+# Summary + Feedback
 
-Congratulations, you have completed Aviatrix FlightSchool!  Throughout the labs, we built connectivity in a single cloud, across multiple clouds, and did not have to touch a single Cloud Provider route table entry.  
+Congratulations, you have completed the StackGuardian Hands-On Workshop!  Throughout the day we created 
+* A pipeline deployment
+* Created templates and adapted them to the specific needs
+* Crafted complex architectures to standardize the organisations infrastructure
+* Introduced Tirith policies and used them to guardrail deployments
 
-We also added route domains and connection policies to segment our network, added Internet Egress security and have visibility into all traffic going over the AWS, Azure and GCP cloud networks.  
+We are happy that you joined us today! Please leave your feedback so we learn from you, what was good and which parts we can improve: https://docs.google.com/forms/d/1FzVmRmvnpPda97HQxBl_KXDH9RMu7a9d745lS3LqgMY 
 
-If you have not done so already, visit the following link to register for the [ACE Associates Certification](https://aviatrix.teachable.com/) program.  Using the voucher ACEMULTICLOUD, you can waive the ACE Associates Course and Exam cost of $1079.  Upon successful completion you will become ACE Associates certified and can then participate in the following additional ACE Courses:
 
-* [ACE Operations](https://aviatrix.com/ace/)
-* [ACE Infrastructure as Code](https://aviatrix.com/ace/)
-* [ACE Professional](https://aviatrix.com/ace/)
+* [SG Documentation](https://docs.stackguardian.io/docs)
+* [SG API](https://docs.stackguardian.io/api)
+* [SG LinkedIn](https://www.linkedin.com/company/stackguardian/mycompany/)
 
-![ACE](images/ace.png) 
+![Goodbye](image/workshop-home.png)

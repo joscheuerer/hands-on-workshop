@@ -5,7 +5,7 @@
 -  [Usecase 3 - Build Architecture](lab3.md)
 -  [Usecase 4 - Provide Guardrails](lab4.md)
 -  [SG Process](sg-process.md)
--  [Summary](summary.md)
+-  [Summary + Feedback](summary.md)
 
 **PROJECT INFO**  
 * [GitHub Repository](https://github.com/joscheuerer/hands-on-workshop)

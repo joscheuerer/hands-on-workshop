@@ -27,17 +27,16 @@ _Fig. Integrations page in Orchestrator_
 
 On the left side you can find the different Best Practice checks like Cost, CIS and PCI DSS. While on the right side you can go into more details to find out about specific **Fails** and how to mitigate them in the future with a proper **Build Tirith Policy**. Explore the integrations page for yourself and with the instructors. 
 
-## 4.2 - Enforce 
-### Validate
-To start a packet capture, navigate to **_Troubleshoot -> Diagnostics -> Network -> Packet Capture_**.  Select one of the Aviatrix Gateways, the interface (eth0), optionally filter on host and/or port, and click _Start_.  Captured packets will be displayed live - click _Stop_ when finished, download the PCAP and open it in Wireshark.
+## 4.2 - Tirith policies to guardrail IaC attributes
+### Description
+Thirith policies can be used for different purposes. In this section we will look at the policing of IaC attributes.
 
-![Packet Capture](images/packet-capture.png)  
-_Fig. Packet Capture_  
-### Expected Results
-You should be able to view live captured packets in the UI.  By downloading the PCAP and opening the file in Wireshark, you will see more detailed packet information.
+### IaC attributes 
+Navigate in the **orchestrator** to **Policies**. Open **define-necessary-tags-eks-node** and change to the **Rules** tab. The first part called Policy shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met. 
+In the case of 
 
-![Packet Capture Details](images/packet-capture-details.png)  
-_Fig. Packet Capture Details_  
+![Policy Actions](image/policy-actions.png)  
+_Fig. Passing or Failing the policy_  
 
 ## Lab 4.2 - Traceroute, Ping, Telnet
 ### Description
