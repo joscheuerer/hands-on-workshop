@@ -7,7 +7,8 @@ Congratulations, you have completed the StackGuardian Hands-On Workshop!  Throug
 * Introduced Tirith policies and used them to guardrail deployments
 
 **We are happy that you joined us today!**
-Please leave your **Feedback** so we learn from you - what you liked and which parts we can improve: https://docs.google.com/forms/d/1FzVmRmvnpPda97HQxBl_KXDH9RMu7a9d745lS3LqgMY 
+
+Please leave your **Feedback** to hear from you, what you liked and where we can improve: **https://docs.google.com/forms/d/1FzVmRmvnpPda97HQxBl_KXDH9RMu7a9d745lS3LqgMY**
 
 
 * [SG Documentation](https://docs.stackguardian.io/docs)
