@@ -40,7 +40,7 @@ _Fig. Passing or Failing the policy_
 
 ## 4.3 - Tirith policies to guardrail IaC attributes
 ### Description
-We look at a policy for terraform resources and attributes itself and see how it is structured.
+We will look at a policy for terraform resources and attributes itself and see how it is structured.
 
 ### Guardrail IaC attributes
 When scrolling down in the **define-necessary-tags-eks-node** policy to the section called **Tirith Policy**, we find the Select Provider set to **Terraform Plan**. This shows us, that the policy will operate on resources and attributes of the terraform plan. 
@@ -52,15 +52,37 @@ Explore the policy settings further.
 ![Policy Tags](image/policy-tags.png)  
 _Fig. Tirith Policy for Tags_  
 
-## 4.4 - Tirith policy on Cost
+
+## Lab 4.4 - Tirith policy on terraform action
+### Description
+Policies can also be based on terraform actions, i.e. create or delete.
+
+### Policy based on terraform action
+On the policy page select **prevent-vpc-destroy** and to the **Rules**. 
+In this policy the Operation Type changed to **Check for terraform action**. It is evaluting if the action on resource **aws_vpc** is **delete**. This would mean that only a delete operation is allowed on the terraform resource. But there is a way to invert this with the **Final Expression**. ``!``eval-id-1 means that every operation is allowed but **NOT** a delete operation.
+
+![Terraform Action](image/policy-delete.png)  
+_Fig. Policy based on terraform action_  
+
+
+
+
+
+## 4.5 - Tirith policy on Cost
 ### Description
 In this paragraph we will look into a cost policy. Currently we are evaluating the static cost for resources but we are working on dynamic cost calculation. 
 ### Cost policies
 In the orchestrator on the policy page choose **define-allowed-eks-node-cost**. When clicking on **Rules** and scrolling down to **Tirith Policy** you will see that this time a different Provider is selected: **Infracost**. 
 In the dropdown for Operation Type you can choose to  ........
 
-![Policy Cost](image/policy-tags.png)  
+![Policy Cost](image/policy-cost.png)  
 _Fig. Tirith Policy for Cost_ 
+
+
+
+
+
+
 
 ## Lab 4.3 - AppIQ
 ### Description
