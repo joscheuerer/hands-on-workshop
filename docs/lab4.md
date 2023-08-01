@@ -27,34 +27,40 @@ _Fig. Integrations page in Orchestrator_
 
 On the left side you can find the different Best Practice checks like Cost, CIS and PCI DSS. While on the right side you can go into more details to find out about specific **Fails** and how to mitigate them in the future with a proper **Build Tirith Policy**. Explore the integrations page for yourself and with the instructors. 
 
-## 4.2 - Tirith policies to guardrail IaC attributes
+## 4.2 - Tirith policies to pass or fail 
 ### Description
-Thirith policies can be used for different purposes. In this section we will look at the policing of IaC attributes.
+Thirith policies can be used for different purposes. In this section we will see, what happens when policies pass or fail.
 
-### IaC attributes 
-Navigate in the **orchestrator** to **Policies**. Open **define-necessary-tags-eks-node** and change to the **Rules** tab. The first part called Policy shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met. 
-In the case of 
+### Pass or Fail 
+Navigate in the **orchestrator** to **Policies**. Open **define-necessary-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met. 
+When a new policy is introduced, it might be advisable to just **Warn** the user to follow it. After some weeks it might be necessary to drive correct behaviour and enable the **Approval Process**. This keeps the workflow from deploying until the approving person(s) cleared or declined the request. For security or regulatory policies it could be necessary to set a strict **Fail**, in this case the workflow is stopped before deploying resources to the cloud accounts. 
 
 ![Policy Actions](image/policy-actions.png)  
 _Fig. Passing or Failing the policy_  
 
-## Lab 4.2 - Traceroute, Ping, Telnet
+## 4.3 - Tirith policies to guardrail IaC attributes
 ### Description
-Using Aviatrix Gateways in the datapath means that you own the datapath.  Another benefit of owning the datapath is having the ability to use some basic but helpful commands such as ```traceroute```, ```tracepath```, ```ping```, ```telnet```, etc.
-### Validate
-To test this out, open _Co-Pilot_ and navigate to **_Topology_**.  Doubleclick on **_gcp-spoke1_** node (VPC / VNET) that you would like to troubleshoot and click on the orange **Aviatrix Gateway**.  On the right side, click on the **_Diag_** button.  
+We look at a policy for terraform resources and attributes itself and see how it is structured.
 
-* Under the **Ping** tab, enter the FQDN ```shared-priv.pod[x].aviatrixlab.com```
-* Under the **Traceroute** tab, enter the FQDN ```shared-priv.pod[x].aviatrixlab.com```
-* Under the **Test Connectivity** tab, enter the FQDN ```shared-priv.pod[x].aviatrixlab.com``` and Port 22
-* Click **Active Sessions** to view the current active sessions running over that Gateway
-* Click **Interface Stats** to the gateway interface stats, packet drops, errors, PPS limits, etc
+### Guardrail IaC attributes
+When scrolling down in the **define-necessary-tags-eks-node** policy to the section called **Tirith Policy**, we find the Select Provider set to **Terraform Plan**. This shows us, that the policy will operate on resources and attributes of the terraform plan. 
+While the Operation Type is set to **Check for terraform resource attribute**, the policy will evaluate from the Cloud Provider AWS the resource **aws_eks_node_group**. When you click on the attribute box you will see all the possible attributes that the specfic resource could have and can build a policy around it. 
+In our case we look at the attribute **tags** and check if it contains the key:value pair **costcenter:workshop**. 
 
-![Gateway Diagnostics](images/gateway-diag.png)  
-_Fig. Gateway Diagnostics_  
+Explore the policy settings further.
 
-### Expected Results
-Using the Topology Gateway Diag, you can run pings, traceroutes, etc.  This is helpful when you need to find out why communication to or from a VPC / VNET is not working.
+![Policy Tags](image/policy-tags.png)  
+_Fig. Tirith Policy for Tags_  
+
+## 4.4 - Tirith policy on Cost
+### Description
+In this paragraph we will look into a cost policy. Currently we are evaluating the static cost for resources but we are working on dynamic cost calculation. 
+### Cost policies
+In the orchestrator on the policy page choose **define-allowed-eks-node-cost**. When clicking on **Rules** and scrolling down to **Tirith Policy** you will see that this time a different Provider is selected: **Infracost**. 
+In the dropdown for Operation Type you can choose to  ........
+
+![Policy Cost](image/policy-tags.png)  
+_Fig. Tirith Policy for Cost_ 
 
 ## Lab 4.3 - AppIQ
 ### Description
