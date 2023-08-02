@@ -8,7 +8,8 @@ Congratulations, you have completed the StackGuardian Hands-On Workshop!  Throug
 
 **We are happy that you joined us today!**
 
-Please leave your **Feedback** to hear from you, what you liked and where we can improve: **https://docs.google.com/forms/d/1FzVmRmvnpPda97HQxBl_KXDH9RMu7a9d745lS3LqgMY**
+Please leave your **Feedback** to hear from you, what you liked and where we can improve: 
+**https://docs.google.com/forms/d/1FzVmRmvnpPda97HQxBl_KXDH9RMu7a9d745lS3LqgMY**
 
 
 * [SG Documentation](https://docs.stackguardian.io/docs)
