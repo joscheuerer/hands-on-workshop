@@ -58,7 +58,7 @@ _Fig. Tirith Policy for Tags_
 Policies can also be based on terraform actions, i.e. create or delete.
 
 ### Policy based on terraform action
-On the policy page select **prevent-vpc-destroy** and go to the **Rules**. 
+On the policy page select **prevent-vpc-destroy** and go to **Rules**. 
 In this policy the Operation Type changed to **Check for terraform action**. It is evaluating, if the action on resource **aws_vpc** is **delete**. This would mean that only a delete operation is allowed on the terraform resource. But there is a way to invert this with the **Final Expression**. ``!eval-id-1`` means that every operation is allowed but **NOT** a delete operation.
 
 ![Terraform Action](image/policy-delete.png)  
