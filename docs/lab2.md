@@ -57,7 +57,7 @@ Check the Meta>Repo entry. It refers to the same repository, which we used in 2.
 
 To deploy the VPC open the latest Revision on the left side and click **Create Workflow**.
 
-![VPC revision](image/vpctemplate.png) 
+![VPC revision](image/vpc-revision.png) 
 _Fig. Create VPC from latest revision_  
 
 To create the workflow, fill in following values - remember to substitute the **xx** with your assigned number: 
