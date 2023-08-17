@@ -5,6 +5,7 @@
 -  [Usecase 3 - Build Architecture](lab3.md)
 -  [Usecase 4 - Provide Guardrails](lab4.md)
 -  [SG Process](sg-process.md)
+-  [Tirith - SG Policy Engine](tirith.md)
 -  [Summary + Feedback](summary.md)
 
 **PROJECT INFO**  
