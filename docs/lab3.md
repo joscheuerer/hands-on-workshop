@@ -42,11 +42,11 @@ To deploy the Cluster open the latest revision of the **aws-eks-cluster** IaC Gr
 The following values are to be filled in for the stack - **xx** being your assigned number: 
 
 1. Select Workflow Group = **wfg-xx**
-2. Enter Stack Name = ``eks-xx``
+2. Enter Stack Name = ``eks-xx``  
 3. Hit **Next**
 
 4. Choose Integrations = **AWS-Deploy-Role**
-5. Cluster Name = ``eks-xx``
+5. Cluster Name = ``eks-xx`` (xx being your number) 
 6. Cluster Version = ``1.25``
 7. Subnet IDs for Cluster 
     * Click little wheel next to the textbox
@@ -88,7 +88,7 @@ _Fig. Subnet IDs for Cluster Nodes_
 13. Click **Next**
 
 14. Choose Integrations = **AWS-Deploy-Role**
-15. K8S_CLUSTER_NAME = ``eks-xx``
+15. K8S_CLUSTER_NAME = ``eks-xx`` (xx being your number) 
 16. Click **Next**
 
 17. Hit **Create and Execute Workflows**
