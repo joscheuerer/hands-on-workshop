@@ -38,8 +38,8 @@ _Fig. Create template on marketplace_
 5. Click **Generate No Code Form**
 6. Scroll all the way down and **Create**
 
-Later on the instructor go through the different tabs with the group but feel free to explore the tabs Usage, Analysis, Code, Meta already now. 
-The **NoCode** tab will be used to adjust the generated NoCode interface.
+Later on the instructor go through the different tabs with the group but you can explore the tabs Usage, Analysis, Code, Meta already now. 
+The **NoCode** tab is used to adjust the generated NoCode interface.
 
 
 ## 2.2 - Deploy an AWS VPC from existing template
@@ -58,6 +58,7 @@ Check the Meta>Repo entry. It refers to the same repository, which we used in 2.
 To deploy the VPC open the latest Revision on the left side and click **Create Workflow**.
 
 ![VPC revision](image/vpc-revision.png) 
+
 _Fig. Create VPC from latest revision_  
 
 To create the workflow, fill in following values - remember to substitute the **xx** with your assigned number: 
@@ -79,4 +80,4 @@ To create the workflow, fill in following values - remember to substitute the **
 
 In the **Runs** tab you can follow the deployment. Once the VPC is ready, the Status will change to **Completed**. 
 
-**This concludes the 2nd exercise**
+Now the instructor will show the different capabilities in the marketplace. If you have a usecase in mind, feel free to ask how this can be done in StackGuardian.
