@@ -38,8 +38,8 @@ _Fig. Create template on marketplace_
 5. Click **Generate No Code Form**
 6. Scroll all the way down and **Create**
 
-Explore first alone and then together with the instructor the different tabs Usage, Analysis, Code and Meta. 
-The **NoCode** tab will be used to adjust the generated NoCode interface for the specific needs. 
+Later on the instructor go through the different tabs with the group but feel free to explore the tabs Usage, Analysis, Code, Meta already now. 
+The **NoCode** tab will be used to adjust the generated NoCode interface.
 
 
 ## 2.2 - Deploy an AWS VPC from existing template
