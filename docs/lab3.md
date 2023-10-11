@@ -45,10 +45,9 @@ The following values are to be filled in for the stack - **xx** being your assig
 2. Enter Stack Name = ``eks-xx``  
 3. Hit **Next**
 
-4. Choose Integrations = **AWS-Deploy-Role**
-5. Cluster Name = ``eks-xx`` (xx being your number) 
-6. Cluster Version = ``1.25``
-7. Subnet IDs for Cluster 
+4. Cluster Name = ``eks-xx`` (xx being your number) 
+5. Cluster Version = ``1.25``
+6. Subnet IDs for Cluster 
     * Click little wheel next to the textbox
     * Workflow Group Name = **wfg-xx**
     * Stack Name = _leave empty_
@@ -59,7 +58,7 @@ The following values are to be filled in for the stack - **xx** being your assig
 ![Subnet IDs](image/public-subnets.png)
 _Fig. Subnet IDs for Cluster_
 
-8. Default Security Group ID
+7. Default Security Group ID
     * Click little wheel next to the textbox
     * Workflow Group Name = **wfg-xx**
     * Stack Name = _leave empty_
@@ -70,11 +69,11 @@ _Fig. Subnet IDs for Cluster_
 ![Default Security Group ID ](image/security-group.png)
 _Fig. Default Security Group ID_
 
-9. Click **Next**
+8. Click **Next**
 
-10. Choose Integrations = **AWS-Deploy-Role**
-11. Name of Managed Node Group = ``eks-managed-node-xx`` 
-12. Subnet IDs for Cluster Nodes
+
+9. Name of Managed Node Group = ``eks-managed-node-xx`` 
+10. Subnet IDs for Cluster Nodes
     * Click little wheel next to the textbox
     * Workflow Group Name = **wfg-xx**
     * Stack Name = _leave empty_
@@ -85,14 +84,16 @@ _Fig. Default Security Group ID_
 ![Subnet IDs](image/public-subnets.png)
 _Fig. Subnet IDs for Cluster Nodes_
 
-13. Click **Next**
+**All other values are already prefilled and connecting the eks-managed-node to the eks-cluster**
 
-14. Choose Integrations = **AWS-Deploy-Role**
-15. K8S_CLUSTER_NAME = ``eks-xx`` (xx being your number) 
-16. Click **Next**
+11. Click **Next**
 
-17. Hit **Create and Execute Workflows**
-18. **Go to created stack**
+**The K8S_CLUSTER_NAME will be pulled from the previous template and is already prefilled**
+
+12. Click **Next**
+
+13. Hit **Create and Execute Workflows**
+14. **Go to created stack**
 
 Well done! After a few seconds the workflow on the right starts running and deploys the EKS cluster. 
 A stack automatically chains the workflow with each other, that means when one workflow finishes, it kicks off the next one in row until the whole stack is deployed. 
