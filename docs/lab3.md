@@ -84,7 +84,6 @@ _Fig. Default Security Group ID_
 ![Subnet IDs](image/public-subnets.png)
 _Fig. Subnet IDs for Cluster Nodes_
 
-**All other values are already prefilled and connecting the eks-managed-node to the eks-cluster**
 
 11. Click **Next**
 
