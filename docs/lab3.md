@@ -48,7 +48,7 @@ The following values are to be filled in for the stack - **xx** being your assig
 4. Cluster Name = ``eks-xx`` (xx being your number) 
 5. Cluster Version = ``1.25``
 6. Subnet IDs for Cluster 
-    * Click little wheel next to the textbox
+    * **Click little wheel on the right side, next to the textbox**
     * Workflow Group Name = **wfg-xx**
     * Stack Name = _leave empty_
     * Workflow Name = **marketplace-vpc-xx**
@@ -59,7 +59,7 @@ The following values are to be filled in for the stack - **xx** being your assig
 _Fig. Subnet IDs for Cluster_
 
 7. Default Security Group ID
-    * Click little wheel next to the textbox
+    * **Click little wheel on the right side, next to the textbox**
     * Workflow Group Name = **wfg-xx**
     * Stack Name = _leave empty_
     * Workflow Name = **marketplace-vpc-xx**
