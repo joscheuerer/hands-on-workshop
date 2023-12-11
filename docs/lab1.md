@@ -25,7 +25,7 @@ Every participant will receive a two digit number (xx) for the workshop. You wil
 
 ### Create your own Workflow Group
 A workflow group is like your own project, where you will be deploying resources into. It is also used to enforce policies later on. 
-In the upper part of the screen click on **Workflow Groups**. In there **Create New Workflow Group** with **Resource Name** = ``wfg-xx`` (xx is your assigned number)
+On the left side of the screen click **Workflow Groups**. In there **Create New Workflow Group** with **Resource Name** = ``wfg-xx`` (xx is your assigned number)
 
 If you like, you can add Tags and descriptions to it as well. 
 
@@ -41,13 +41,13 @@ In this exercise we will deploy a resource from an existing repository. This sho
 2. Click the button **Create New Workflow** - **Use Form**.
 3. **Workflow Name** = ``repo-vpc-xx``
 4. Click **Next**
-5. Choose integration = **AWS-Deploy-Role**
+5. Choose connector = **AWS-Deploy-Role**
 6. Click **Next** 
 7. The form should read the following entries
     * Workflow Type = terraform
     * ``Un-select`` 'Use Marketplace IAC Template'
     * Source Destination Kind = github.com
-    * Repository URL = ``https://github.com/StackGuardian/terraform-aws-vpc`` 
+    * Repository URL = ``https://github.com/`` ``StackGuardian/terraform-aws-vpc`` 
     * The rest leave empty
     * Hit **Save**
 
