@@ -45,10 +45,10 @@ In this exercise we will deploy a resource from an existing repository. This sho
 6. Click **Next** 
 7. The form should read the following entries
     * Workflow Type = terraform
-    * ``Un-select`` 'Use Marketplace IAC Template'
-    * Source Destination Kind = github.com
-    * Repository URL = ``https://github.com/`` ``StackGuardian/terraform-aws-vpc`` 
-    * The rest leave empty
+    * For Source Options choose ``VCS Provider``
+    * VCS Configuration is ``Github``
+    * Provider/Repository Path = ``https://github.com`` / ``StackGuardian/terraform-aws-vpc`` 
+    * The rest leave unchanged 
     * Hit **Save**
 
 ![Deployfromrepo](image/deployfromrepo.png)
