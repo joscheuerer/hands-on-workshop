@@ -43,6 +43,7 @@ When filling a form and no specific values are mentioned, then just leave the de
 3. **Workflow Name** = ``repo-vpc-xx``
 4. Click **Next**
 
+
 5. Choose connector = **AWS-Deploy-Role**
 6. Click **Next** 
 7. The form should read the following entries
