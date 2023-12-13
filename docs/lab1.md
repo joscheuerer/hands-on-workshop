@@ -34,6 +34,7 @@ If you like, you can add Tags and descriptions to it as well.
 ## 1.2 - Deploy AWS VPC from exisiting repository
 ### Description
 In this exercise we will deploy a resource from an existing repository. This should demonstrate, how simple it is to reuse the code that was already written within the organisation. In this case we will use a public repository from StackGuardian, but it could also be a private one.
+When filling a form and no specific values are mentioned, then just leave the default values in the field and continue.
 
 ### Create workflow
 
@@ -41,6 +42,7 @@ In this exercise we will deploy a resource from an existing repository. This sho
 2. Click the button **Create New Workflow** - **Use Form**.
 3. **Workflow Name** = ``repo-vpc-xx``
 4. Click **Next**
+
 5. Choose connector = **AWS-Deploy-Role**
 6. Click **Next** 
 7. The form should read the following entries
