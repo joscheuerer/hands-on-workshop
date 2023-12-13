@@ -1,7 +1,7 @@
 # Usecase 3 - Build Architecture
 
 ## Overview - What's in the section?
-Time: ~45 minutes  
+Time: ~30 minutes  
 
 In this part of the workshop, we are going to show the power of combining multiple templates and protocols into one infrastructure stack. This allows us to build complex architectures and make them available across departments to the whole organisation. No need to reinvent the wheel over and over again. 
 To summarise we want to achieve the following:
@@ -105,3 +105,4 @@ _Fig. Stack of EKS Cluster being deployed_
 
 
 **It is time to lay back and let StackGuardian do the work.**
+The deployment will take about 15min. Time enough to check out the workflows and what is getting created.
