@@ -41,12 +41,12 @@ When filling a form and no specific values are mentioned, then just leave the de
 1. Click on your newly created workflow group **wfg-xx** 
 2. Click the button **Create New Workflow** - **Use Form**.
 3. **Workflow Name** = ``repo-vpc-xx``
-4. Click **Next**
-
-
+4. Click **Next** 
+---
 5. Choose connector = **AWS-Deploy-Role**
 6. Click **Next** 
-7. The form should read the following entries
+---
+7. The following form should read the following entries
     * Workflow Type = terraform
     * For Source Options choose ``VCS Provider``
     * VCS Configuration is ``Github``
