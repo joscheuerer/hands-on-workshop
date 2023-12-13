@@ -16,10 +16,10 @@ _Fig. Build Architectures in StackGuardian_
 
 ## 3.1 - Closer Look at the EKS cluster IaC Group
 ### Description
-Until now we were only dealing with low level templates which are VPCs, VMs, Storage Account, Resource Group. Now we are arranging them into production-grade infrastructure that allows organisations to standardize their deployments. 
+Until now we were only dealing with low level templates which are VPCs, VMs, Storage Accounts, Resource Groups .... Now we are arranging them into production-grade building-blocks that allows organisations to standardize their deployments. 
 
 ### EKS-Cluster
-In the marketplace we will use the predefined IaC Group for EKS-Cluster. Choose **workshop Templates** and **IAC Groups** on the left. Then select the **aws-eks-cluster** IaC Group. 
+In the marketplace we will use the predefined IaC Group for EKS-Cluster. Go to the marketplace, choose **workshop Templates** and **IAC Groups** on the left. Then select the **aws-eks-cluster** IaC Group. 
 
 ![IaC Group](image/iac-group.png)  
 _Fig. IaC Groups in the StackGuardian Marketplace_   
@@ -29,26 +29,27 @@ In the tab **Templates** you can see, that this IaC Group consists of three temp
 * EKS Cluster Nodes - Terraform
 * NginX Service - Helm Chart
 
-By clicking **Edit Template Defaults** from **terraform-aws-eks-managed-node-group-stripped** you can investigate how the different modules are interconnected. After scrolling down and looking at **Name of existing EKS cluster** the value is a reference to parameter of the previous template in the IaC group. The little wheel on the right hand side helps, to create this reference. 
-There are more things to explore but lets get started with the deployment. Close the modal on the top right.
+Later, with the instructor we will look more in detail, how the single templates are connected to each other and paramaters are passed from one template to the next.
 
 ## 3.2 - Deploy the EKS cluster 
 ### Description
-We will use the previously deployed VPC from the marketplace (section 2.2) and deploy the EKS Cluster into it. 
+We will use the previously created VPC (section 2.2) and deploy the EKS Cluster building-block into it. 
 
 
-### EKS-Cluster
+### EKS-Cluster with Node and Webserver
 To deploy the Cluster open the latest revision of the **aws-eks-cluster** IaC Group and click **Create Stack**. 
 The following values are to be filled in for the stack - **xx** being your assigned number: 
 
 1. Select Workflow Group = **wfg-xx**
 2. Enter Stack Name = ``eks-xx``  
 3. Hit **Next**
+---
+4. Most of the configuration is pre-populated in the building-block. Scroll down and enter 
 
-4. Cluster Name = ``eks-xx`` (xx being your number) 
+   Cluster Name = ``eks-xx`` (xx being your number) 
 5. Cluster Version = ``1.25``
 6. Subnet IDs for Cluster 
-    * **Click little wheel on the right side, next to the textbox**
+    * **Click the little wheel on the right side, next to the textbox**
     * Workflow Group Name = **wfg-xx**
     * Stack Name = _leave empty_
     * Workflow Name = **marketplace-vpc-xx**
@@ -70,11 +71,11 @@ _Fig. Subnet IDs for Cluster_
 _Fig. Default Security Group ID_
 
 8. Click **Next**
-
+---
 
 9. Name of Managed Node Group = ``eks-managed-node-xx`` 
 10. Subnet IDs for Cluster Nodes
-    * Click little wheel next to the textbox
+    * **Click little wheel next to the textbox**
     * Workflow Group Name = **wfg-xx**
     * Stack Name = _leave empty_
     * Workflow Name = **marketplace-vpc-xx**
@@ -86,16 +87,18 @@ _Fig. Subnet IDs for Cluster Nodes_
 
 
 11. Click **Next**
+---
 
-**The K8S_CLUSTER_NAME will be pulled from the previous template and is already prefilled**
+**The K8S_CLUSTER_NAME under Environmental Variables will be pulled from the previous template and is already prefilled**
 
 12. Click **Next**
+---
 
 13. Hit **Create and Execute Workflows**
 14. **Go to created stack**
 
-Well done! After a few seconds the workflow on the right starts running and deploys the EKS cluster. 
-A stack automatically chains the workflow with each other, that means when one workflow finishes, it kicks off the next one in row until the whole stack is deployed. 
+Well done! After a few seconds (use refresh button) the first workflow will start running and deploys the first template - the EKS cluster. 
+A stack automatically chains the workflows with each other, that means when one workflow finishes, it kicks off the next one in row until the whole stack is deployed. 
 
 ![Stack Deploy](image/stack-deploy.png)
 _Fig. Stack of EKS Cluster being deployed_
