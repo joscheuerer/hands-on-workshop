@@ -82,7 +82,7 @@ To create the workflow, fill in following values - remember to substitute the **
 
 You created a workflow from a template in the marketplace, but the resources are not yet deployed yet. 
 
-To do so, click the **Play-button** on the top left and **Run Workflow** in the flyout. 
+To do so, click the **Play-button** on the top left and afterwards **Run Workflow** in the flyout. 
 
 ![VPC revision](image/playbutton.png) 
 
