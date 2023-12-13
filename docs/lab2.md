@@ -17,8 +17,8 @@ _Fig. Use the marketplace to manage and deploy templates_
 
 ## 2.1 - Create template in marketplace
 ### Description
-In 2.1. we will see how to create a new template in the private marketplace, which is only visible in your own organisation. FYI, we will not deploy this template for a AWS VPC because it will need too many parameters to be set. 
-In 2.2 we will leverage the public marketplace to find a template that is pointing to the same repo but with a nice NoCode interface.
+in this lab you will see how quickly a new template in the private marketplace can be created.
+FYI, in 2.2 will NOT deploy this template but a template that was prepared for the exercise.
 
 ### Create template in marketplace
 On the left top click on the 9 dots next to Orchestrator and then on **Marketplace**
@@ -54,7 +54,7 @@ In the top search bar type ``vpc``. This should show you the **terraform-aws-vpc
 ![VPC template](image/vpctemplate.png) 
 _Fig. VPC template in marketplace_  
 
-Check the Meta>Repo entry. It refers to the same repository, which we used in 2.1 to create the VPC template. Still, when you check the **NoCode** tab you see a huge difference - less parameters and also predefined values. Have a look at the **Show Schema** to understand what was changed in the JSON & UI Schema to achieve this. 
+Under Meta>Repo you can find the repository, where the IaC is pulled from in each deployment of this template. When you open the **NoCode** tab you can see how the NoCode interface was adapted to the needs of this lab. Only a few paramters need to be set to create the VPC with subnets, routes, internet gateway and many more resources. Modifications to the NoCode form are done under **Show Schema** - A quick way to adapt the graphical interface to non-IaC experts via JSON. 
 
 To deploy the VPC open the latest Revision on the left side and click **Create Workflow**.
 
@@ -66,19 +66,30 @@ To create the workflow, fill in following values - remember to substitute the **
 
 1. Select Workflow Group = **wfg-xx**
 2. Click **Next**
-
+---
 3. Workflow Name = **marketplace-vpc-xx**
 4. Click **Next**
-
-5. Choose Integrations = **AWS-Deploy-Role**
+---
+5. Choose Connector = **AWS-Deploy-Role**
 6. Click **Next**
-
-7. VPC Name = **workshop-vpc-xx**
+---
+7. Scroll down and set the textfield: VPC Name = **workshop-vpc-xx**
 8. CIDR Block for VPC = _choose one_
 9. Public Subnets IP Addresses = _choose one_
 10. Private Subnets IP Addresses = _choose one_
-11. Click **Save & Run**
+11. Click **Save**
+---
 
-In the **Runs** tab you can follow the deployment. Once the VPC is ready, the Status will change to **Completed**. 
+You created a workflow from a template in the marketplace, but the resources are not yet deployed yet. 
 
-Now the instructor will show the different capabilities in the marketplace. If you have a usecase in mind, feel free to ask how this can be done in StackGuardian.
+To do so, click the **Play-button** on the top left and **Run Workflow** in the flyout. 
+
+![VPC revision](image/playbutton.png) 
+
+_Fig. Deploy resources via Play-button and Run workflow_ 
+
+
+
+In the **Runs** tab you can now follow the deployment. Once the VPC is ready, the Status will change to **Completed**. 
+
+The instructor will show the different capabilities in the marketplace. If you have a usecase in mind, feel free to ask how this can be done in StackGuardian.
