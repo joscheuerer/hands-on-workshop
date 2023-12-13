@@ -26,25 +26,26 @@ On the left top click on the 9 dots next to Orchestrator and then on **Marketpla
 ![Marketplacelink](image/marketplacelink.png)  
 _Fig. Marketplace Link_  
   
-Once on the marketplace you can check out the different links or just continue to **Create Template +** which you can find on the right side of the screen.
+Once on the marketplace you can try out the different links and then continue to **Create Template +** which you can find on the top right hand side of the screen.
 
 ![Create Template](image/marketplace.png) 
 _Fig. Create template on marketplace_  
 
 1. Template Name = ``vpc-xx``
-2. Source Config Kind = **TERRAFORM**
+2. Scroll down and set Source Config Kind = **TERRAFORM**
 3. Source Destination Kind = **github.com**
 4. Repository URL = ``https://github.com/StackGuardian/terraform-aws-vpc``
-5. Click **Generate No Code Form**
-6. Scroll all the way down and **Create**
+5. On the bottom right of the screen click **Generate No Code Form**
+6. By scrolling down you see the variables that were identified in the IaC and loaded into the template.
+7. Hit **Create** to add this template to your marketplace.
 
-Later on the instructor go through the different tabs with the group but you can explore the tabs Usage, Analysis, Code, Meta already now. 
-The **NoCode** tab is used to adjust the generated NoCode interface.
+Later on the instructor will go through the different tabs with the whole group but you can also explore the tabs Usage, Analysis, Code, Meta already now. 
+Btw. the **NoCode** tab is used to adjust the generated NoCode interface.
 
 
 ## 2.2 - Deploy an AWS VPC from existing template
 ### Description
-In this exercise we will deploy a VPC from the marketplace.  
+In this exercise you will **NOT** use the previously created template but you deploy a prepared template from the marketplace.  
 
 ### Deploy from template
 In the marketplace overview select **workshop Templates** and **Infrastructure as Code**. This is the private marketplace for the workshop organisation and only visible to the members of the workshop. 
