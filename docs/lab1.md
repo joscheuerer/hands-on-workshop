@@ -54,7 +54,7 @@ When filling a form and no specific values are mentioned, then just leave the de
     * The rest leave unchanged 
     * Hit **Save**
 
-![Deployfromrepo](image/deployfromrepo.png)
+![Deployfromrepo](image/deployfromrepo.png.png)
 
 
 ### More points to explore for you and with instructor
