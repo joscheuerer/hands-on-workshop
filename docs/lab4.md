@@ -19,7 +19,7 @@ _Fig. Create and enforce proactive policies_
 Indepent of the way the infrastructure in the Cloud Accounts is created, StackGuardian is analysing it in regards to Cost, Security, Compliance & Best Practises. 
 
 ### Integrations page
-In the **Orchestrator** go to the **Integrations** tab and choose the **AWS-ReadOnly** account. 
+In the **Orchestrator** in the left menubar go to **Connectors** >> **Cloud Providers** and choose the **AWS-ReadOnly** account. 
 
 ![Integrations](image/integrations.png)
 _Fig. Integrations page in Orchestrator_
@@ -32,7 +32,7 @@ On the left side you can find the different Best Practice checks like Cost, CIS 
 Thirith policies can be used for different purposes. In this section we will see, what happens when policies pass or fail.
 
 ### Pass or Fail 
-Navigate in the **Orchestrator** to **Policies**. Open **define-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met. 
+Navigate in the **Orchestrator** to **Policies**. Open **define-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met - **Action when policy errors**. 
 When a new policy is introduced, it might be advisable to just **Warn** the user to follow it. After some weeks it might be necessary to drive correct behaviour and enable the **Approval Process**. This keeps the workflow from deploying until the approving person(s) cleared or declined the request. For security or regulatory policies it could be necessary to set a strict **Fail**, in this case the workflow is stopped before deploying resources to the cloud accounts. 
 
 ![Policy Actions](image/policy-actions.png)  
@@ -81,7 +81,7 @@ _Fig. Tirith Policy for Cost_
 ### Description
 After investigating the policies, now is the time to apply them to different workflows and see the result. 
 ### Activate Policy
-On the Policy page click on the three lines next to **define-tags-eks-node** and choose **Clone**. As Resource Name for the cloned policy enter ``define-tags-eks-node-xx`` and **Create**. On the Meta tab of the new policy open **Workflow Groups**, then click your own **wfg-xx** and select **All current & future stacks & Workflows**.  Hit **Save** 
+On the Policy page select the radio button in front of **define-tags-eks-node** and choose **Options** >> **Clone**. As Resource Name for the cloned policy enter ``define-tags-eks-node-xx`` and **Create**. On the Meta tab of the new policy open **Workflow Groups**, then click your own **wfg-xx** and select **All current & future stacks & Workflows**.  Hit **Save** 
 
 ![Activate Policy](image/activate-policy.png)  
 _Fig. Activate policy on Workflow Group_  
