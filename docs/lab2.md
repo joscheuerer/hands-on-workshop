@@ -53,31 +53,24 @@ Change back into the orchestrator and click on **Workflow Groups** in the menuba
 
 1. Choose your workflow group **wfg-xx**.
 2. On the right top you can find **Create Workflow >> Use Wizard >> Terraform**
-3. Source Options = ``Marketplace``
-4. Browse Templates = **vpc**
-5.  The following form should read the following entries
-    * Workflow Type = terraform
-    * For Source Options choose ``VCS Provider``
-    * VCS Configuration is ``Github``
-    * Provider/Repository Path = ``https://github.com`` / ``StackGuardian/terraform-aws-vpc`` 
-    * The rest leave unchanged 
-    * Hit **Save**
-
-
-1. Select Workflow Group = **wfg-xx**
-2. Click **Next**
----
-3. Workflow Name = **marketplace-vpc-xx**
-4. Click **Next**
----
-5. Choose Connector = **AWS-Deploy-Role**
+3. Source Options = **Marketplace**
+4. Browse Templates = ``vpc``
+5. The following form should read the following entries
+    * VPC Name = ``workshop-vpc-xx``
+    * Region with Availabilty Zones =  ``Frankfurt``
+    * CIDR Block for VPC = _choose one_
+    * Public Subnets IP Addresses = _choose one_
+    * Private Subnets IP Addresses = _choose one_
 6. Click **Next**
 ---
-7. Scroll down and set the textfield: VPC Name = **workshop-vpc-xx**
-8. CIDR Block for VPC = _choose one_
-9. Public Subnets IP Addresses = _choose one_
-10. Private Subnets IP Addresses = _choose one_
-11. Click **Save**
+
+7. Scroll down to Environment Settings and select connector = **AWS-Deploy-Role**
+8. **Next**
+---
+9. Workflow Name = ``workshop-vpc-xx``
+10. **Next**
+---
+11. Review the configuration and click **Next**
 ---
 
 You created a workflow from a template in the marketplace, but the resources are not yet deployed yet. 
