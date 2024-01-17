@@ -55,22 +55,23 @@ Change back into the orchestrator and click on **Workflow Groups** in the menuba
 2. On the right top you can find **Create Workflow >> Use Wizard >> Terraform**
 3. Source Options = **Marketplace**
 4. Browse Templates = ``vpc``
-5. The following form should read the following entries
+5. Choose **terraform-aws-vpc-stripped**
+6. The form below should have the following entries
     * VPC Name = ``workshop-vpc-xx``
     * Region with Availabilty Zones =  ``Frankfurt``
     * CIDR Block for VPC = _choose one_
     * Public Subnets IP Addresses = _choose one_
     * Private Subnets IP Addresses = _choose one_
-6. Click **Next**
+7. Click **Next**
 ---
 
-7. Scroll down to Environment Settings and select connector = **AWS-Deploy-Role**
-8. **Next**
+8. Scroll down to Environment Settings and select connector = **AWS-Deploy-Role**
+9. **Next**
 ---
-9. Workflow Name = ``workshop-vpc-xx``
-10. **Next**
+10. Workflow Name = ``workshop-vpc-xx``
+11. **Next**
 ---
-11. Review the configuration and click **Next**
+12. Review the configuration and click **Next**
 ---
 
 You created a workflow from a template in the marketplace, but the resources are not yet deployed yet. 
