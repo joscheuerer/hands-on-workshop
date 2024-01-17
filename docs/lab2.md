@@ -17,8 +17,8 @@ _Fig. Use the marketplace to manage and deploy templates_
 
 ## 2.1 - Create template in marketplace
 ### Description
-in this lab you will see how quickly a new template in the private marketplace can be created.
-FYI, in 2.2 will NOT deploy this template but a template that was prepared for the exercise.
+In this lab you will see how quickly a new template in the private marketplace can be created.
+
 
 ### Create template in marketplace
 On the left top click on the 9 dots next to Orchestrator and then on **Marketplace**
@@ -43,26 +43,26 @@ Later on the instructor will go through the different tabs with the whole group 
 Btw. the **NoCode** tab is used to adjust the generated NoCode interface.
 
 
-## 2.2 - Deploy an AWS VPC from existing template
+## 2.2 - Deploy an AWS VPC from existing template via NoCode
 ### Description
-In this exercise you will **NOT** use the previously created template but you deploy a prepared template from the marketplace.  
+In this exercise you will **NOT** use the previously created template. 
+Rather we put you in the shoes of a Cloud Consumer or Developer, who is not too much into IaC syntax. The NoCode interfaces allows also non-IaC-experts to use IaC.
 
-### Deploy from template
-In the marketplace overview select **workshop Templates** and **Infrastructure as Code**. This is the private marketplace for the workshop organisation and only visible to the members of the workshop. 
-In the top search bar type ``vpc``. This should show you the **terraform-aws-vpc-stripped** IaC template. Go ahead and check out what is inside.
+### Deploy infrastructure from template
+Change back into the orchestrator and click on **Workflow Groups** in the menubar. 
 
-![VPC template](image/vpctemplate.png) 
-_Fig. VPC template in marketplace_  
+1. Choose your workflow group **wfg-xx**.
+2. On the right top you can find **Create Workflow >> Use Wizard >> Terraform**
+3. Source Options = ``Marketplace``
+4. Browse Templates = **vpc**
+5.  The following form should read the following entries
+    * Workflow Type = terraform
+    * For Source Options choose ``VCS Provider``
+    * VCS Configuration is ``Github``
+    * Provider/Repository Path = ``https://github.com`` / ``StackGuardian/terraform-aws-vpc`` 
+    * The rest leave unchanged 
+    * Hit **Save**
 
-Under Meta>Repo you can find the repository, where the IaC is pulled from in each deployment of this template. When you open the **NoCode** tab you can see how the NoCode interface was adapted to the needs of this lab. Only a few paramters need to be set to create the VPC with subnets, routes, internet gateway and many more resources. Modifications to the NoCode form are done under **Show Schema** - A quick way to adapt the graphical interface to non-IaC experts via JSON. 
-
-To deploy the VPC open the latest Revision on the left side and click **Create Workflow**.
-
-![VPC revision](image/vpc-revision.png) 
-
-_Fig. Create VPC from latest revision_  
-
-To create the workflow, fill in following values - remember to substitute the **xx** with your assigned number: 
 
 1. Select Workflow Group = **wfg-xx**
 2. Click **Next**
