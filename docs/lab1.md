@@ -48,8 +48,8 @@ When filling a form and no specific values are mentioned, then just leave the de
 ---
 7. The following form should read the following entries
     * Workflow Type = terraform
-    * For Source Options choose ``VCS Provider``
-    * VCS Configuration is ``Github``
+    * For Source Options choose **VCS Provider**
+    * VCS Configuration is **Github**
     * Provider/Repository Path = ``https://github.com`` / ``StackGuardian/terraform-aws-vpc`` 
     * The rest leave unchanged 
     * Hit **Save**
