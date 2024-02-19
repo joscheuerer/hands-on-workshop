@@ -26,7 +26,7 @@ In the orchestrator on the left click on **Library** and choose **Create Templat
 Once on the marketplace you can try out the different links and then continue to **Create Template +** which you can find on the top right hand side of the screen.
 
 ![Create Template](image/createtemplate.png) 
-_Fig. Create IaC template on marketplace_  
+_Fig. Create IaC template_  
 
 1. Template Name = ``vpc-xx``
 2. Scroll down and set Source Config Kind = **TERRAFORM**
