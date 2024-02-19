@@ -15,17 +15,17 @@ The goal of this use-case is to demonstrate the following:
 ![Usecase 2](image/usecase2.png)
 _Fig. Use the marketplace to manage and deploy templates_
 
-## 2.1 - Create template in marketplace
+## 2.1 - Create an IaC template
 ### Description
-In this lab you will see how quickly a new template in the private marketplace can be created.
+In this lab you will see how quickly a new template in the library can be created.
 
 
-### Create a IaC template
+### Create an IaC template
 In the orchestrator on the left click on **Library** and choose **Create Template +**. 
   
 Once on the marketplace you can try out the different links and then continue to **Create Template +** which you can find on the top right hand side of the screen.
 
-![Create Template](image/marketplace.png) 
+![Create Template](image/createtemplate.png) 
 _Fig. Create IaC template on marketplace_  
 
 1. Template Name = ``vpc-xx``
