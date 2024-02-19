@@ -20,16 +20,13 @@ _Fig. Use the marketplace to manage and deploy templates_
 In this lab you will see how quickly a new template in the private marketplace can be created.
 
 
-### Create template in marketplace
-On the left top click on the 9 dots next to Orchestrator and then on **Marketplace**
-  
-![Marketplacelink](image/marketplacelink.png)  
-_Fig. Marketplace Link_  
+### Create a IaC template
+In the orchestrator on the left click on **Library** and choose **Create Template +**. 
   
 Once on the marketplace you can try out the different links and then continue to **Create Template +** which you can find on the top right hand side of the screen.
 
 ![Create Template](image/marketplace.png) 
-_Fig. Create template on marketplace_  
+_Fig. Create IaC template on marketplace_  
 
 1. Template Name = ``vpc-xx``
 2. Scroll down and set Source Config Kind = **TERRAFORM**
@@ -39,8 +36,10 @@ _Fig. Create template on marketplace_
 6. By scrolling down you see the variables that were identified in the IaC and loaded into the template.
 7. Hit **Create** to add this template to your marketplace.
 
-Later on the instructor will go through the different tabs with the whole group but you can also explore the tabs Usage, Analysis, Code, Meta already now. 
-Btw. the **NoCode** tab is used to adjust the generated NoCode interface.
+The creation process will bring you directly into the marketplace interface. Here you can explore the tabs Usage, Analysis, Code, Meta now. 
+Later on the instructor will go through the different tabs with the whole group 
+
+If you want to move back to the **orchestrator** go to the left top corner and click on the **9dots**.
 
 
 ## 2.2 - Deploy an AWS VPC from existing template via NoCode
