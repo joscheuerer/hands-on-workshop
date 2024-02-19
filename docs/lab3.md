@@ -46,6 +46,7 @@ Click the tab **Stacks** and afterwards **Create Stack**.
 3. Hit **Next**
 ---
 4. Most of the configuration like runner constraint (shared) and in which account the resources will get deployed into (connector), is already pre-populated in this eks building-block. Scroll down and enter 
+
    Cluster Name = ``eks-xx`` (xx being your number) 
 5. Cluster Version = ``1.25``
 6. Subnet IDs for Cluster 
