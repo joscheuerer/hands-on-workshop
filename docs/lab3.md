@@ -33,19 +33,19 @@ Later, with the instructor we will look more in detail, how the single templates
 
 ## 3.2 - Deploy the EKS cluster 
 ### Description
+In this exercise we will deploy a cluster from the prespective of a cloud consumer that is not regularly using IaC. 
 We will use the previously created VPC (section 2.2) and deploy the EKS Cluster building-block into it. 
 
 
 ### EKS-Cluster with Node and Webserver
-To deploy the Cluster open the latest revision of the **aws-eks-cluster** IaC Group and click **Create Stack**. 
-The following values are to be filled in for the stack - **xx** being your assigned number: 
+Go into the orchestrator and choose your Workflowgroup **wfg-xx**.
+Click the tab **Stacks** and afterwards **Create Stack**.
 
-1. Select Workflow Group = **wfg-xx**
-2. Enter Stack Name = ``eks-xx``  
+1. Enter the Resource Name = ``eks-xx`` (xx being your number)
+2. Under IAC Group Configuration choose the **/workshop/aws-eks-cluster** and the latest revision
 3. Hit **Next**
 ---
-4. Most of the configuration is pre-populated in the building-block. Scroll down and enter 
-
+4. Most of the configuration like runner constraint (shared) and in which account the resources will get deployed into (connector), is already pre-populated in this eks building-block. Scroll down and enter 
    Cluster Name = ``eks-xx`` (xx being your number) 
 5. Cluster Version = ``1.25``
 6. Subnet IDs for Cluster 
@@ -94,7 +94,7 @@ _Fig. Subnet IDs for Cluster Nodes_
 12. Click **Next**
 ---
 
-13. Hit **Create and Execute Workflows**
+13. Use **Create and Execute Workflows**
 14. **Go to created stack**
 
 Well done! After a few seconds (use refresh button) the first workflow will start running and deploys the first template - the EKS cluster. 
