@@ -23,7 +23,6 @@ In this lab you will see how quickly a new template in the library can be create
 ### Create an IaC template
 In the orchestrator on the left click on **Library** and choose **Create Template +**. 
   
-Once on the marketplace you can try out the different links and then continue to **Create Template +** which you can find on the top right hand side of the screen.
 
 ![Create Template](image/createtemplate.png) 
 _Fig. Create IaC template_  
