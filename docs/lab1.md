@@ -25,7 +25,7 @@ Every participant will receive a two digit number (xx) for the workshop. You wil
 
 ### Create your own Workflow Group
 A workflow group is like your own project, where you will be deploying resources into. It is also used to enforce policies later on. 
-On the left side of the screen click **Workflow Groups**. In there **Create New Workflow Group** with **Resource Name** = ``wfg-xx`` (xx is your assigned number)
+On the left side of the screen click **Workflow Groups**. In there **Create Workflow Group** with **Resource Name** = ``wfg-xx`` (xx is your assigned number)
 
 If you like, you can add Tags and descriptions to it as well. 
 
@@ -39,7 +39,7 @@ When filling a form and no specific values are mentioned, then just leave the de
 ### Create workflow
 
 1. Click on your newly created workflow group **wfg-xx** 
-2. Click the button **Create New Workflow** - **Use Form**.
+2. Click the button **Create Workflow** - **Use Form**.
 3. **Workflow Name** = ``repo-vpc-xx``
 4. Click **Next** 
 ---
@@ -54,7 +54,7 @@ When filling a form and no specific values are mentioned, then just leave the de
     * The rest leave unchanged 
     * Hit **Save**
 
-![Deployfromrepo](image/deployfromrepo.png.png)
+![Deployfromrepo](image/deployfromrepo.png)
 
 
 ### More points to explore for you and with instructor
