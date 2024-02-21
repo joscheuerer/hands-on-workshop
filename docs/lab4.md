@@ -1,4 +1,4 @@
-# Usecase 4 - Create and Enforce Guardrails
+rs# Usecase 4 - Create and Enforce Guardrails
 
 ## Overview - What's in the section?
 Time: ~30 minutes  
@@ -21,8 +21,8 @@ Indepent of the way the infrastructure in the Cloud Accounts is created, StackGu
 ### Integrations page
 In the **Orchestrator** in the left menubar go to **Connectors** >> **Cloud Providers** and choose the **AWS-ReadOnly** account. 
 
-![Integrations](image/integrations.png)
-_Fig. Integrations page in Orchestrator_
+![Integrations](image/connectors.png)
+_Fig. Cloud connectors page in Orchestrator_
 
 
 On the left side you can find the different Best Practice checks like Cost, CIS and PCI DSS. While on the right side you can go into more details to find out about specific **Fails** and how to mitigate them in the future with a proper **Build Tirith Policy**. Explore the integrations page for yourself and with the instructors. 
