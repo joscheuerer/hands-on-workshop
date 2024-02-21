@@ -19,7 +19,7 @@ _Fig. Build Architectures in StackGuardian_
 Until now we were only dealing with low level templates which are VPCs, VMs, Storage Accounts, Resource Groups .... Now we are arranging them into production-grade building-blocks that allows organisations to standardize their deployments. 
 
 ### EKS-Cluster
-In the marketplace we will use the predefined IaC Group for EKS-Cluster. Go to the marketplace, choose **workshop Templates** and **IAC Groups** on the left. Then select the **aws-eks-cluster** IaC Group. 
+In the marketplace we will use the predefined IaC Group for EKS-Cluster. Go to the marketplace, choose **All Templates** and **IAC Groups** on the left. Then select the **aws-eks-cluster** IaC Group. 
 
 ![IaC Group](image/iac-group.png)  
 _Fig. IaC Groups in the StackGuardian Marketplace_   
