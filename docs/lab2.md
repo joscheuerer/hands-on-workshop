@@ -53,7 +53,7 @@ Change back into the orchestrator and click on **Workflow Groups** in the menuba
 2. On the right top you can find **Create Workflow >> Use Wizard >> Terraform**
 3. Source Options = **Marketplace**
 4. Browse Templates = ``vpc``
-5. Choose **terraform-aws-vpc-stripped**
+5. Choose **terraform-aws-vpc-stripped** and the latest Revision.
 6. The form below should have the following entries
     * VPC Name = ``marketplace-vpc-xx``
     * Region with Availabilty Zones =  ``Frankfurt``
@@ -66,7 +66,7 @@ Change back into the orchestrator and click on **Workflow Groups** in the menuba
 8. Scroll down to Environment Settings and select connector = **AWS-Deploy-Role**
 9. **Next**
 ---
-10. Workflow Name = ``marketplace-vpc-xx``
+10. Workflow Name = ``marketplace-vpc-xx`` (this is the name for the resource in the StackGuardian interface)
 11. **Next**
 ---
 12. Review the configuration and click **Next**
