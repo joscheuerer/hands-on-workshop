@@ -57,7 +57,7 @@ _Fig. Choose Repository to deploy from_
 12. Review the settings and **Launch**
 ---
 13. Choose Terraform Action = Create and **Quick Run** to start the deployment.
-
+---
 
 
 
