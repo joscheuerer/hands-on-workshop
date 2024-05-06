@@ -39,22 +39,26 @@ When filling a form and no specific values are mentioned, then just leave the de
 ### Create workflow
 
 1. Click on your newly created workflow group **wfg-xx** 
-2. Click the button **Create Workflow** - **Use Form**.
-3. **Workflow Name** = ``repo-vpc-xx``
-4. Click **Next** 
----
-5. Choose connector = **AWS-Deploy-Role**
-6. Click **Next** 
----
-7. The following form should read the following entries
-    * Workflow Type = terraform
-    * For Source Options choose **VCS Provider**
-    * VCS Configuration is **Github**
-    * Provider/Repository Path = ``https://github.com`` / ``StackGuardian/terraform-aws-vpc`` 
-    * The rest leave unchanged 
-    * Hit **Save**
+2. Click the button **Create Workflow** - **Use Wizard** -> **Terraform**.
+3. Choose **Git Repository**
+4. Under Git Repository select **github_com**
+5. Repository URL: ``https://github.com/StackGuardian/terraform-aws-vpc`` 
+6. Click **Next**
 
 ![Deployfromrepo](image/deployfromrepo.png)
+---
+7. Choose connector = **AWS-Deploy-Role**
+8. Click **Next** 
+---
+9. **Workflow Name** = ``repo-vpc-xx``
+10. The rest leave unchanged.
+11. Hit **Next**
+---
+12. Review the settings and **Launch**
+---
+13. Choose Terraform Action = Create and **Quick Run** to start the deployment.
+
+
 
 
 ### More points to explore for you and with instructor
