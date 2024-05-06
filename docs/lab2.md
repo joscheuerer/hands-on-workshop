@@ -51,9 +51,9 @@ Change back into the orchestrator and click on **Workflow Groups** in the menuba
 
 1. Choose your workflow group **wfg-xx**.
 2. On the right top you can find **Create Workflow >> Use Wizard >> Terraform**
-3. Source Options = **Marketplace**
+3. Source Type = **Subscribed Templates**
 4. Browse Templates = ``vpc``
-5. Choose **terraform-aws-vpc-stripped** and the latest Revision.
+5. Choose **terraform-aws-vpc-stripped** and under template revision the latest revision.
 6. The form below should have the following entries
     * VPC Name = ``marketplace-vpc-xx``
     * Region with Availabilty Zones =  ``Frankfurt``
@@ -63,23 +63,15 @@ Change back into the orchestrator and click on **Workflow Groups** in the menuba
 7. Click **Next**
 ---
 
-8. Scroll down to Environment Settings and select connector = **AWS-Deploy-Role**
+8. Under Deployment Environment select the connector = **AWS-Deploy-Role**
 9. **Next**
 ---
 10. Workflow Name = ``marketplace-vpc-xx`` (this is the name for the resource in the StackGuardian interface)
 11. **Next**
 ---
-12. Review the configuration and click **Next**
+12. Review the configuration and click **Launch**
 ---
-
-You created a workflow from a template in the marketplace, but the resources are not yet deployed yet. 
-
-To do so, click the **Play-button** on the top left and afterwards **Run Workflow** in the flyout. 
-
-![VPC revision](image/playbutton.png) 
-
-_Fig. Deploy resources via Play-button and Run workflow_ 
-
+13. To run the workflow choose the **Terraform Action: Create** and click **Quick Run**
 
 
 In the **Runs** tab you can now follow the deployment. Once the VPC is ready, the Status will change to **Completed**. 
