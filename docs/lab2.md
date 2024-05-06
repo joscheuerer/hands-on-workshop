@@ -72,7 +72,7 @@ Change back into the orchestrator and click on **Workflow Groups** in the menuba
 12. Review the configuration and click **Launch**
 ---
 13. To run the workflow choose the **Terraform Action: Create** and click **Quick Run**
-
+---
 
 In the **Runs** tab you can now follow the deployment. Once the VPC is ready, the Status will change to **Completed**. 
 
