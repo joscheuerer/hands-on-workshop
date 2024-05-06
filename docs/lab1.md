@@ -39,7 +39,7 @@ When filling a form and no specific values are mentioned, then just leave the de
 ### Create workflow
 
 1. Click on your newly created workflow group **wfg-xx** 
-2. Click the button **Create Workflow** - **Use Wizard** -> **Terraform**.
+2. Click the button **Create Workflow** >> **Use Wizard** >> **Terraform**.
 3. Choose **Git Repository**
 4. Under Git Repository select **github_com**
 5. Repository URL: ``https://github.com/StackGuardian/terraform-aws-vpc`` 
