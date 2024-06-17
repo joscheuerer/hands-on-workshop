@@ -1,4 +1,4 @@
-# Usecase 3 - Templates and NoCode
+# Usecase 3 - Templates & NoCode (Self-Service)
 
 ## Overview - What's in the section?
 Time: ~20 minutes
