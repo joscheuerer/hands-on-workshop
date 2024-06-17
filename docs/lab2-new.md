@@ -18,7 +18,7 @@ This section shows how to deployments and test can be started from git.
 The deployment results, cost calculation and policy evaluation are reported back into git. 
 
 ### Setup triggers
-Navigate to your existing workflow from the lab 1 by choosing the **Workflow Groups** in the sidebar. 
+Let's navigate to your existing workflow from the first usecase by choosing **Workflow Groups** in the sidebar. 
 Select your workflow group **wfg-xx**, and then the workflow **repo-vpc-xx**. 
 Choose the tab **Settings** and **Advanced Options**. 
 
