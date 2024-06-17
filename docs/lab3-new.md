@@ -1,7 +1,7 @@
 # Usecase 3 - Templates and NoCode
 
 ## Overview - What's in the section?
-Time: ~30 minutes
+Time: ~20 minutes
 
 In this section, we will begin to make use of the StackGuardian marketplace, which can be seen as a library for templates and blueprints. But it is more than that - it also allows you to manage the version and lifecycle of your IaC templates, across different protocols (like Terraform, Ansible Playbooks, Helm Charts etc..), combine multiple templates/protocols into a stack and use NoCode to deploy them. 
 The goal of this use-case is to demonstrate the following:
@@ -17,15 +17,16 @@ _Fig. Use the marketplace to manage and deploy templates_
 
 ## 3.1 - Create an IaC template
 ### Description
-In this lab you will see how quickly a new template in the library can be created.
+In this lab you will see how to create a new template from an existing workflow.
 
 
 ### Create an IaC template
-In the orchestrator on the left click on **Library** and choose **Create Template +**. 
+Starting point is once again your existing workflow **repo-vpc-xx**. 
+Choose the tab **Settings** and **Create Template**.
   
 
-![Create Template](image/createtemplate.png) 
-_Fig. Create IaC template_  
+![Create Template](image/create-template-from-wf.png) 
+_Fig. Create IaC template from existing workflow_  
 
 1. Template Name = ``vpc-xx``
 2. Scroll down and set Source Config Kind = **TERRAFORM**
