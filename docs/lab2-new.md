@@ -28,7 +28,7 @@ _Fig. Open Advanced Options for Github Triggers_
 This will bring you to the Button **Configure Github Triggers**. 
 Now configure the triggers as shown in the image below. 
 
-![UseCase 2](image/github-triggers.png)
+![UseCase 2](image/github-triggers.png|width=100)
 _Fig. Configure Github Triggers_
 
 
