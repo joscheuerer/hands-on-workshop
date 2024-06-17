@@ -85,7 +85,7 @@ Also **Subscribe** to this template, to make it available for endusers. Before s
 ![NoCode interface](image/save-create-subscribe.png) 
 _Fig. NoCode interface after adapting it_  
 
-## 3.3 - Deploy your AWS vpc template via NoCode
+## 3.3 - Deploy your vpc-template via NoCode
 ### Description
 In this exercise you will use the previously created template. 
 Put yourself in the shoes of a Cloud Consumer or Developer, who is not too much into IaC syntax. The NoCode interfaces allows also non-IaC-experts to use IaC.
@@ -94,9 +94,9 @@ Put yourself in the shoes of a Cloud Consumer or Developer, who is not too much 
 Change back into the **orchestrator** by going to the left top corner and clicking on the waffle iron (**9dots**).
 Hit **Launch Workflow** in the menubar and fill the wizard:
 
-1. Source Type = **Subscribed Templates**
-2. Browse Templates = ``vpc``
-3. Choose your **vpc-template-xx** and under template revision the latest revision.
+1. Source Type: **Subscribed Templates**
+2. Choose a Subscribed Template: ``vpc``
+3. Select your **vpc-template-xx** and under template revision the latest revision.
 4. The form below should have the following entries
     * VPC Name = ``new-vpc-xx``
     * Region with Availabilty Zones =  _choose one_
