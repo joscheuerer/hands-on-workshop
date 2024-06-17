@@ -35,9 +35,10 @@ _Fig. Configure Github Triggers_
 
 ### What is the effect of triggers
 By setting the triggers the following will happen:
-* Each time a pull request towards the tracked branch ('master') is created, the workflow on StackGuardian will run
-* The triggered run will deploy the resources (in this case a vpc) in the cloud but will ask for an approval after creating the terraform plan
+* Each time a pull request towards the tracked branch ('master') is created, the workflow will run
+* The triggered run will deploy the resources (in this case a vpc) in the cloud but will ask for an approval before deployment to the cloud
 * A paragraph with comments will be posted in the github pull request to inform the git user about the outcome of the run
 
 ### Pull request
 Once all participants completed the setup, your StackGuardian Host will share the screen and create the pull request.
+This will start your workflow and ask you for your approval. Please approve to complete the run.
