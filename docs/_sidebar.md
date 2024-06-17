@@ -2,7 +2,7 @@
 -  [Home](home.md)
 -  [Usecase 1 - First Deployment](lab1.md)
 -  [Usecase 2 - Gitops](lab2-new.md)
--  [Usecase 3 - Templates & NoCode](lab3-new.md)
+-  [Usecase 3 - Templates & NoCode (Self-Service)](lab3-new.md)
 -  [Usecase 4 - Build Architecture](lab4-new.md)
 -  [Usecase 5 - Provide Guardrails](lab5-new.md)
 -  [SG Process](sg-process.md)
