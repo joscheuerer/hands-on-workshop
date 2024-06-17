@@ -21,8 +21,15 @@ The deployment results, cost calculation and policy evaluation are reported back
 Navigate to your existing workflow from the lab before by choosing the **Workflow Groups** in the sidebar. 
 Select your your workflow group **wfg-xx**, and then your **repo-vpc-xx**. 
 Choose the tab **Settings** and in the section of Git Repository the **Advanced Options**. 
+
+![UseCase 2](image/advanced-options.png)
+_Fig. Open Advanced Options for Github Triggers_
+
 This will bring you to the Button **Configure Github Triggers**. 
 Now configure the triggers as shown in the image below. 
+
+![UseCase 2](image/github-triggers.png)
+_Fig. Configure Github Triggers_
 
 
 ### What is the effect of triggers
@@ -30,3 +37,6 @@ By setting the triggers the following will happen
 * Each time a pull request towards the tracked branch ('master') is created, the workflow on StackGuardian will run
 * The triggered run will deploy the resources (in this case a vpc) in the cloud but will ask for an approval after creating the terraform plan
 * A paragraph with comments will be posted in the github pull request to inform the git user about the outcome of the run
+
+### Pull request
+Once all participants completed the setup, your StackGuardian Host will share the screen and create the pull request.
