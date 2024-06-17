@@ -14,36 +14,39 @@ To summarise we want to achieve the following:
 ![Usecase 4](image/usecase3.png)
 _Fig. Build Architectures in StackGuardian_
 
-## 4.1 - Closer Look at the EKS cluster IaC Group
+## 4.1 - Closer Look at the full-stack IaC Group
 ### Description
 Until now we were only dealing with low level templates which are VPCs, VMs, Storage Accounts, Resource Groups .... Now we are arranging them into production-grade building-blocks that allows organisations to standardize their deployments. 
 
 ### EKS-Cluster
-In the marketplace we will use the predefined IaC Group for EKS-Cluster. Go to the marketplace, choose **All Templates** and **IAC Groups** on the left. Then select the **aws-eks-cluster** IaC Group. 
+In the marketplace we will use the predefined IaC Group that creates a VPC, EKS-Cluster, Worker-nodes and a webserver. Go to the library, choose **Template Type: IAC Groups**. Then select the **aws-full-stack** IaC Group. 
 
-![IaC Group](image/iac-group.png)  
-_Fig. IaC Groups in the StackGuardian Marketplace_   
+![IaC Group](image/aws-full-stack.png)  
+_Fig. IaC Group in the StackGuardian Library_   
 
 In the tab **Templates** you can see, that this IaC Group consists of three templates: 
+* VPC Network - Terraform
 * EKS Cluster - Terraform
 * EKS Cluster Nodes - Terraform
 * NginX Service - Helm Chart
 
 Later, with the instructor we will look more in detail, how the single templates are connected to each other and paramaters are passed from one template to the next.
 
-## 4.2 - Deploy the EKS cluster 
+## 4.2 - Deploy the full stack 
 ### Description
-In this exercise we will deploy a cluster from the prespective of a cloud consumer that is not regularly using IaC. 
-We will use the previously created VPC (section 2.2) and deploy the EKS Cluster building-block into it. 
+In this exercise we will deploy the stack from the prespective of a cloud consumer, who is not familiar with IaC.
 
-
-### EKS-Cluster with Node and Webserver
-Go into the orchestrator and choose your Workflowgroup **wfg-xx**.
+### VPC, EKS-Cluster with Node and Webserver
+In the orchestrator and choose your Workflowgroup **wfg-xx**.
 Click the tab **Stacks** and afterwards **Create Stack**.
 
-1. Enter the Resource Name = ``eks-xx`` (xx being your number)
-2. Under IAC Group Configuration choose the **/workshop/aws-eks-cluster** and the latest revision
-3. Hit **Next**
+1. Enter the Resource Name = ``full-stack-xx`` (xx being your number)
+2. Enable **Basic Mode**
+3. Under IAC Group Configuration choose the **/stackguardian/aws-full-stack** and the latest revision
+4. Hit **Next**
+
+![IaC Group](image/configure-stack.png)  
+_Fig. Configure the full stack_   
 ---
 4. Most of the configuration like runner constraint (shared) and in which account the resources will get deployed into (connector), is already pre-populated in this eks building-block. Scroll down and enter 
 
