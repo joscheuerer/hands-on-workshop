@@ -24,51 +24,91 @@ In this lab you will see how to create a new template from an existing workflow.
 Starting point is once again your existing workflow **repo-vpc-xx**. 
 Choose the tab **Settings** and **Create Template**.
   
-
 ![Create Template](image/create-template-from-wf.png) 
 _Fig. Create IaC template from existing workflow_  
 
-1. Template Name = ``vpc-xx``
-2. Scroll down and set Source Config Kind = **TERRAFORM**
-3. Source Destination Kind = **github.com**
-4. Repository URL = ``https://github.com/StackGuardian/terraform-aws-vpc``
-5. On the bottom right of the screen click **Generate No Code Form**
-6. By scrolling down you see the variables that were identified in the IaC and loaded into the template.
-7. Hit **Create** to add this template to your marketplace.
-
-The creation process will bring you directly into the marketplace interface. Here you can explore the tabs Usage, Analysis, Code, Meta now. 
-Later on the instructor will go through the different tabs with the whole group 
-
-If you want to move back to the **orchestrator** go to the left top corner and click on the **9dots**.
+In the new window provide the following parameters
+1. Template Name = ``vpc-template-xx``
+2. The rest of the parameters are prefilled from the workflow (leave them as is)
+3. Hit **Create** to add this template to your marketplace.
 
 
-## 3.2 - Deploy an AWS VPC from existing template via NoCode
+## 3.2 - Adapt the NoCode interface for your needs
 ### Description
-In this exercise you will **NOT** use the previously created template. 
-Rather we put you in the shoes of a Cloud Consumer or Developer, who is not too much into IaC syntax. The NoCode interfaces allows also non-IaC-experts to use IaC.
+The NoCode interface is intended to expose only these variables to the endusers which are actually relevant to them. 
+This exercise helps you to understand, how you can achieve it with StackGuardian.
+
+### NoCode to enable Self-service
+In your newly created template **vpc-template-xx** go to the tab **SG noCode** and open **Show Schemas**. 
+Now copy the code below and overwrite the brackets (``{}``) in the **Form JSON Schema**. 
+
+```
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the VPC",
+            "default": "sg-vpc-xx",
+            "title": "VPC name"
+        },
+        "azs": {
+            "type": "string",
+            "description": "The region to deploy to",
+            "title": "Region",
+            "default": "",
+            "enumNames": [
+                "Frankfurt",
+                "Ireland"
+            ],
+            "enum": [
+                [
+                    "eu-central-1a",
+                    "eu-central-1b"
+                ],
+                [
+                    "eu-west-1a",
+                    "eu-west-1b"
+                ]
+            ]
+        }
+    }
+}
+
+```
+
+Once completed you can choose **Show Form** to see how the interface will look for the endusers. 
+Don't forget to **Save & Create New Revision**, which will provide a new version of the template on the left hand side. 
+Also **Subscribe** to this template, to make it available for endusers. Before subscribing to it, the template can not be deployed by endusers.
+
+![NoCode interface](image/save-create-subscribe.png) 
+_Fig. NoCode interface after adapting it_  
+
+## 3.3 - Deploy your AWS vpc template via NoCode
+### Description
+In this exercise you will use the previously created template. 
+Put yourself in the shoes of a Cloud Consumer or Developer, who is not too much into IaC syntax. The NoCode interfaces allows also non-IaC-experts to use IaC.
 
 ### Deploy infrastructure from template
-Change back into the orchestrator and click on **Workflow Groups** in the menubar. 
+Change back into the **orchestrator** by going to the left top corner and clicking on the waffle iron (**9dots**).
+Hit **Launch Workflow** in the menubar and fill the wizard:
 
-1. Choose your workflow group **wfg-xx**.
-2. On the right top you can find **Create Workflow >> Use Wizard >> Terraform**
-3. Source Type = **Subscribed Templates**
-4. Browse Templates = ``vpc``
-5. Choose **terraform-aws-vpc-stripped** and under template revision the latest revision.
-6. The form below should have the following entries
-    * VPC Name = ``marketplace-vpc-xx``
-    * Region with Availabilty Zones =  ``Frankfurt``
-    * CIDR Block for VPC = _choose one_
-    * Public Subnets IP Addresses = _choose one_
-    * Private Subnets IP Addresses = _choose one_
-7. Click **Next**
+1. Source Type = **Subscribed Templates**
+2. Browse Templates = ``vpc``
+3. Choose your **vpc-template-xx** and under template revision the latest revision.
+4. The form below should have the following entries
+    * VPC Name = ``new-vpc-xx``
+    * Region with Availabilty Zones =  _choose one_
+5. Click **Next**
 ---
 
 8. Under Deployment Environment select the connector = **AWS-Deploy-Role**
 9. **Next**
 ---
-10. Workflow Name = ``marketplace-vpc-xx`` (this is the name for the resource in the StackGuardian interface)
-11. **Next**
+10. Workflow Group Name = ``wfg-xx``
+11. Workflow Name = ``new-vpc-xx`` (this is the name for the resource in the StackGuardian interface)
+12. **Next**
 ---
 12. Review the configuration and click **Launch**
 ---
