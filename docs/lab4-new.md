@@ -46,9 +46,10 @@ Click the tab **Stacks** and afterwards **Create Stack**.
 4. Hit **Next**
 
 ![IaC Group](image/configure-stack.png)  
-_Fig. Configure the full stack_   
+ _Fig. Configure the full stack_   
+ 
 ---
-4. Most of the configuration like runner constraint (shared) and in which account the resources will get deployed into (connector), is already pre-populated in this eks building-block. Scroll down and enter 
+5. Most of the configuration like runner constraint (shared) and in which account the resources will get deployed into (connector), is already pre-populated in this eks building-block. Scroll down and enter 
 
    Cluster Name = ``eks-xx`` (xx being your number) 
 5. Cluster Version = ``1.25``
