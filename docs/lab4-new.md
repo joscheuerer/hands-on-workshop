@@ -49,64 +49,24 @@ Click the tab **Stacks** and afterwards **Create Stack**.
  _Fig. Configure the full stack_   
  
 ---
-5. Most of the configuration like runner constraint (shared) and in which account the resources will get deployed into (connector), is already pre-populated in this eks building-block. Scroll down and enter 
+5. Meta is already correctly populated with the correct runner info - but you can have a look.
+6. In Target Platform Configuration enter the **Connector: AWS-Deploy-Role**
+7. In Template Varibale Settings insert
+   * VPC name: **vpc-xx**
+   * Region: _choose any_
+   * Cluster Name: **cluster-xx**
+   * Cluster Version: **1.29**
+8. Hit **Next**
 
-   Cluster Name = ``eks-xx`` (xx being your number) 
-5. Cluster Version = ``1.25``
-6. Subnet IDs for Cluster 
-    * **Click the little wheel on the right side, next to the textbox**
-    * Workflow Group Name = **wfg-xx**
-    * Stack Name = _leave empty_
-    * Workflow Name = **marketplace-vpc-xx**
-    * Output Key = ``public_subnets.value``
-    * Click **OK**
-
-![Subnet IDs](image/public-subnets.png)
-_Fig. Subnet IDs for Cluster_
-
-7. Default Security Group ID
-    * **Click little wheel on the right side, next to the textbox**
-    * Workflow Group Name = **wfg-xx**
-    * Stack Name = _leave empty_
-    * Workflow Name = **marketplace-vpc-xx**
-    * Output Key = ``default_security_group_id.value``
-    * Click **OK**
-
-![Default Security Group ID ](image/security-group.png)
-_Fig. Default Security Group ID_
-
-8. Click **Next**
 ---
 
-9. Name of Managed Node Group = ``eks-managed-node-xx`` 
-10. Subnet IDs for Cluster Nodes
-    * **Click little wheel next to the textbox**
-    * Workflow Group Name = **wfg-xx**
-    * Stack Name = _leave empty_
-    * Workflow Name = **marketplace-vpc-xx**
-    * Output Key = ``public_subnets.value``
-    * Click **OK**
+9. Use **Create and Execute Workflows**
 
-![Subnet IDs](image/public-subnets.png)
-_Fig. Subnet IDs for Cluster Nodes_
-
-
-11. Click **Next**
----
-
-**The K8S_CLUSTER_NAME under Environmental Variables will be pulled from the previous template and is already prefilled**
-
-12. Click **Next**
----
-
-13. Use **Create and Execute Workflows**
-14. **Go to created stack**
-
-Well done! After a few seconds (use refresh button) the first workflow will start running and deploys the first template - the EKS cluster. 
+Well done! After a few seconds (use refresh button) the first workflow will start running and deploys the first template - the VPC. 
 A stack automatically chains the workflows with each other, that means when one workflow finishes, it kicks off the next one in row until the whole stack is deployed. 
 
-![Stack Deploy](image/stack-deploy.png)
-_Fig. Stack of EKS Cluster being deployed_
+![Stack Deploy](image/full-stack-deploy.png)
+_Fig. Full-Stack being deployed_
 
 
 **It is time to lay back and let StackGuardian do the work.**
