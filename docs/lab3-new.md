@@ -1,9 +1,9 @@
-# Usecase 3 - Templates & NoCode (Self-Service)
+# Usecase 3 - Templates & NoCode
 
 ## Overview - What's in the section?
 Time: ~20 minutes
 
-In this section, we will begin to make use of the StackGuardian marketplace, which can be seen as a library for templates and blueprints. But it is more than that - it also allows you to manage the version and lifecycle of your IaC templates, across different protocols (like Terraform, Ansible Playbooks, Helm Charts etc..), combine multiple templates/protocols into a stack and use NoCode to deploy them. 
+In this section, we will begin to make use of the StackGuardian library, which is the home of templates and blueprints. But it is more than that - it also allows you to manage the version and lifecycle of your IaC templates, across different protocols (like Terraform, Ansible Playbooks, Helm Charts etc..), combine multiple templates/protocols into a stack and use NoCode to deploy them. 
 The goal of this use-case is to demonstrate the following:
 
 * Standardize on blueprints and templates
@@ -17,7 +17,7 @@ _Fig. Use the marketplace to manage and deploy templates_
 
 ## 3.1 - Create an IaC template
 ### Description
-In this lab you will see how to create a new template from an existing workflow.
+In this lab you will learn how to create a new template from an existing workflow.
 
 
 ### Create an IaC template
@@ -27,7 +27,7 @@ Choose the tab **Settings** and **Create Template**.
 ![Create Template](image/create-template-from-wf.png) 
 _Fig. Create IaC template from existing workflow_  
 
-In the new window provide the following parameters
+In the new window provide the following parameters:
 1. Template Name = ``vpc-template-xx``
 2. The rest of the parameters are prefilled from the workflow (leave them as is)
 3. Hit **Create** to add this template to your marketplace.
@@ -35,7 +35,7 @@ In the new window provide the following parameters
 
 ## 3.2 - Adapt the NoCode interface for your needs
 ### Description
-The NoCode interface is intended to expose only these variables to the endusers which are actually relevant to them. 
+The NoCode interface is intended to expose only the variables to the cloud consumers which are actually relevant to them. 
 This exercise helps you to understand, how you can achieve it with StackGuardian.
 
 ### NoCode to enable Self-service
