@@ -40,7 +40,7 @@ This exercise helps you to understand, how you can achieve it with StackGuardian
 
 ### NoCode to enable Self-service
 In your newly created template **vpc-template-xx** go to the tab **SG noCode** and open **Show Schemas**. 
-Now copy the code below and overwrite the brackets (``{}``) in the **Form JSON Schema**. 
+Now copy the code below and overwrite the brackets ``{}`` in the **Form JSON Schema**. 
 
 ```
 {
