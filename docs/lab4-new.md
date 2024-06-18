@@ -9,7 +9,7 @@ To summarise we want to achieve the following:
 * Build production-grade architecture
 * Combine multiple protocols in a IaC Group
 * Deploy the infrastructure stack with NoCode interface
-* Self-service for developers and business lines
+* Self-service for developers and cloud consumers
 
 ![Usecase 4](image/usecase3.png)
 _Fig. Build Architectures in StackGuardian_
