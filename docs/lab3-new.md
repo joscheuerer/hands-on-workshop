@@ -50,7 +50,6 @@ Now copy the code below and overwrite the brackets ``{}`` in the **Form JSON Sch
         "name": {
             "type": "string",
             "description": "Name of the VPC",
-            "default": "sg-vpc-xx",
             "title": "VPC name"
         },
         "azs": {
