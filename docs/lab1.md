@@ -1,7 +1,7 @@
 # UseCase 1 - Deployment from repository
 
 ## Overview - What's in the section?
-Time: ~15 minutes
+Time: ~10 minutes
 
 In this section, we are going to explore the StackGuardian platform and also prepare the environment for the current and upcoming sections. The task for usecase 1 is to deploy a AWS VPC from an existing github repository. This will touch following capabilities of our platform: 
 
