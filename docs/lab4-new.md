@@ -1,7 +1,7 @@
 # Usecase 4 - Build Architecture
 
 ## Overview - What's in the section?
-Time: ~30 minutes  
+Time: ~15 minutes  
 
 In this part of the workshop, we are going to show the power of combining multiple templates and protocols into one infrastructure stack. This allows us to build complex architectures and make them available across departments to the whole organisation. No need to reinvent the wheel over and over again. 
 To summarise we want to achieve the following:
