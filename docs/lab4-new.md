@@ -53,7 +53,7 @@ Click the tab **Stacks** and afterwards **Create Stack**.
 6. In Target Platform Configuration enter the **Connector: AWS-Deploy-Role**
 7. In Template Variable Settings insert:
    * VPC name: **vpc-xx**
-   * Region: _choose any_
+   * Region: **Frankfurt**
    * Cluster Name: **cluster-xx**
    * Cluster Version: **1.29**
 8. Hit **Next**
