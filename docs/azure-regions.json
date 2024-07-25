@@ -1,0 +1,14 @@
+[
+  {
+    "region":"Germany West Central",
+    "terraform":"germanywestcentral"
+  },
+  {
+    "region":"North Europe",
+    "terraform":"northeurope"
+  },
+  {
+    "region":"West Europe",
+    "terraform":"westeurope"
+  }
+]
