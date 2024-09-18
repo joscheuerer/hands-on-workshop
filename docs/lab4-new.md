@@ -37,17 +37,22 @@ This should give you a good idea, what you are going to deploy in the next step.
 In this exercise we will deploy the stack from the prespective of a cloud consumer, who is not familiar with IaC.
 
 ### VPC, EKS-Cluster with Node and Webserver
-In the orchestrator choose your Workflowgroup **wfg-xx**.
-Click the tab **Stacks** and afterwards **Create Stack**.
+Go back to the library but this time click **Use** in the tile of the full-stack-template.
+![IaC Group](image/use-aws-full-stack.png)  
+ _Fig. Use aws-full-stack_   
 
-1. Enter the Resource Name = ``full-stack-xx`` (xx being your number)
-2. Enable **Basic Mode**
-3. Under IAC Group Configuration choose the **/stackguardian/aws-full-stack** and the latest revision
-4. Hit **Next**
+---
+In the new Pop-out choose your own 
+1. Existing WorkflowGroup: **wfg-xx** and provide as 
+2. Stack Name ``full-stack-xx``. 
+Click **Next**.
 
-![IaC Group](image/configure-stack.png)  
- _Fig. Configure the full stack_   
- 
+---
+In the new Window choose the following options:
+
+3. Enable **Basic Mode**
+4. Then scroll to the bottom and hit **Next**
+
 ---
 5. Meta is already correctly populated with the correct runner info - but you can have a look.
 6. In Target Platform Configuration enter the **Connector: AWS-Deploy-Role**
