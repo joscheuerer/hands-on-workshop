@@ -52,6 +52,8 @@ In the new Window choose the following options:
 
 3. Enable **Basic Mode**
 4. Then scroll to the bottom and hit **Next**
+![IaC Group](image/basic-mode.png)  
+ _Fig. Enable Basic-mode_  
 
 ---
 5. Meta is already correctly populated with the correct runner info - but you can have a look.
