@@ -39,7 +39,7 @@ The NoCode interface is intended to expose only the variables to the cloud consu
 This exercise helps you to understand, how you can achieve it with StackGuardian.
 
 ### NoCode to enable Self-service
-In your newly created template **vpc-template-xx** go to the tab **SG noCode** and open **Show Schemas**. 
+In your newly created template **vpc-template-xx** go to the tab **SG noCode** and open **Edit Form**. 
 Now copy the code below and overwrite the brackets ``{}`` in the **Form JSON Schema**. 
 
 ```
