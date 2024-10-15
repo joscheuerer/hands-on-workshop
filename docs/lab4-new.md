@@ -14,12 +14,60 @@ To summarise we want to achieve the following:
 ![Usecase 4](image/usecase3.png)
 _Fig. Build Architectures in StackGuardian_
 
-## 4.1 - Closer Look at the Full-Stack IaC Group
+## 4.1 - Deploy the Full-Stack 
 ### Description
-Until now we were only dealing with low level templates which are VPCs, VMs, Storage Accounts, Resource Groups .... Now we are arranging them into production-grade building-blocks, which allows organisations to standardize their deployments. 
+Until now we were only dealing with single level templates which are VPCs, VMs, Storage Accounts, Resource Groups .... Now we are arranging them into production-grade building-blocks, which allows organisations to standardize their deployments. 
+
+### VPC, EKS-Cluster with Worker-Node and Webserver
+In the sidebar click on **Dev Portal**. This will bring you to the Developer Portal, which allows anybody in the organisation to deploy infrastructure & applications (without Coding experience). 
+
+1. In the **Template Type** dropdown choose **IAC Groups**
+2. **Use** the **aws-full-stack**
+
+![IaC Group](image/use-aws-full-stack.png)  
+ _Fig. Use aws-full-stack_  
+
+---
+
+3. Workflow Group Name: **wfg-xx**  
+4. Stack Name: ``full-stack-xx``. 
+Click **Next**.
+
+---
+
+5. In Variable Settings insert:
+   * VPC name: **vpc-xx**
+   * Region: **Frankfurt**
+   * Cluster Name: **cluster-xx**
+   * Cluster Version: **1.29**
+Click **Next**.
+
+---
+  
+6. In Deployment Environment enter the **Connector: AWS-Deploy-Role**
+7. Hit **Launch**
+
+---
+
+
+
+Well done! This is all that is necessary to deploy the whole building-block. After a few seconds (use refresh button) the first workflow will start running and deploys the first workflow - the VPC. 
+A stack automatically chains the workflows with each other, that means when one workflow finishes, it kicks off the next one until the whole stack is deployed. 
+
+![Stack Deploy](image/full-stack-deploy.png)
+_Fig. Full-Stack being deployed_
+
+**Now let StackGuardian do the work. The deployment will take about 15min**
+In the mean time, check out lab 4.2 and look behind the curtain.
+
+
+## 4.2 - Closer Look at the Full-Stack IaC Group
+### Description
+Now we have seen, how simple it can be for the end-user to deploy infrastructure in Self-Service. 
+But how are all the single modules/templates connected? How are variables transfered between Terraform and Helm? 
 
 ### Full-Stack in Library
-In the marketplace we will use the predefined IaC Group that creates a VPC, EKS-Cluster, Worker-nodes and a webserver. Go to the library, choose **Template Type: IAC Groups**. Then select the **aws-full-stack** IaC Group. 
+Go to the library, choose **Template Type: IAC Groups**. Then select the **aws-full-stack** IaC Group. 
 
 ![IaC Group](image/aws-full-stack.png)  
 _Fig. IaC Group in the StackGuardian Library_   
@@ -30,51 +78,8 @@ In the tab **Templates** you can see, that this IaC Group consists of four templ
 * EKS Cluster Nodes - Terraform
 * NginX Service - Helm Chart
 
-This should give you a good idea, what you are going to deploy in the next step. Together with the instructor you will take a closer look later on, to understand how the single templates are connected to each other and paramaters are passed from one template to the next.
-
-## 4.2 - Deploy the Full-Stack 
-### Description
-In this exercise we will deploy the stack from the prespective of a cloud consumer, who is not familiar with IaC.
-
-### VPC, EKS-Cluster with Node and Webserver
-Go back to the library but this time click **Use** in the tile of the full-stack-template.
-![IaC Group](image/use-aws-full-stack.png)  
- _Fig. Use aws-full-stack_   
-
----
-In the new Pop-out choose your own 
-1. Existing WorkflowGroup: **wfg-xx** and provide as 
-2. Stack Name ``full-stack-xx``. 
-Click **Next**.
-
----
-In the new Window choose the following options:
-
-3. Enable **Basic Mode**
-4. Then scroll to the bottom and hit **Next**
-![IaC Group](image/basic-mode.png)  
- _Fig. Enable Basic-mode_  
-
----
-5. Meta is already correctly populated with the correct runner info - but you can have a look.
-6. In Target Platform Configuration enter the **Connector: AWS-Deploy-Role**
-7. In Template Variable Settings insert:
-   * VPC name: **vpc-xx**
-   * Region: **Frankfurt**
-   * Cluster Name: **cluster-xx**
-   * Cluster Version: **1.29**
-8. Hit **Next**
-
----
-
-9. Use **Create and Execute Workflows**
-
-Well done! This is all that is necessary to deploy the whole building-block. After a few seconds (use refresh button) the first workflow will start running and deploys the first workflow - the VPC. 
-A stack automatically chains the workflows with each other, that means when one workflow finishes, it kicks off the next one until the whole stack is deployed. 
-
-![Stack Deploy](image/full-stack-deploy.png)
-_Fig. Full-Stack being deployed_
+You can already have a look at the **View Template Defaults** in each of the templates. 
+The instructor we will also take a closer look at the teampletes with the whole group. 
 
 
-**It is time to lay back and let StackGuardian do the work.**
-The deployment will take about 15min. Time enough to check out the workflows and what is getting created.
+
