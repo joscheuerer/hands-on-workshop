@@ -91,7 +91,7 @@ Put yourself in the shoes of a Cloud Consumer or Developer, who is not much into
 
 ### Deploy infrastructure from template
 Change back into the **orchestrator** by going to the left top corner and clicking on the waffle iron (**9dots**).
-Hit **Launch Workflow** in the menubar and fill the wizard:
+Use the triangle next to Dev Portal and click **Launch Workflow** in the menubar.
 
 1. Source Type: **Subscribed Templates**
 2. Choose a Subscribed Template: ``vpc``
