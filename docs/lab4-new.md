@@ -67,7 +67,7 @@ Now we have seen, how simple it can be for the end-user to deploy infrastructure
 But how are all the single modules/templates connected? How are variables transfered between Terraform and Helm? 
 
 ### Full-Stack in Library
-Go to the library, choose **Template Type: IAC Groups**. Then select the **aws-full-stack** IaC Group. 
+Click on **Develop** icon, then click on **library**, choose **Template Type: IAC Groups**. Then select the **aws-full-stack** IaC Group. 
 
 ![IaC Group](image/aws-full-stack.png)  
 _Fig. IaC Group in the StackGuardian Library_   
