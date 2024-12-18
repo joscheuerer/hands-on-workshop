@@ -19,7 +19,7 @@ _Fig. Create and enforce proactive policies_
 Indepent of the way the infrastructure in the Cloud Accounts is created, StackGuardian is analysing it in regards to Cost, Security, Compliance & Best Practises. 
 
 ### Integrations page
-In the **Orchestrator** in the left menubar go to **Connectors** >> **Cloud Providers** and choose the **AWS-ReadOnly** account. 
+In the **Overview** page in the left navbar go to **Connectors** >> **Cloud Providers** and choose the **AWS-ReadOnly** account. 
 
 ![Integrations](image/connectors.png)
 _Fig. Cloud connectors page in Orchestrator_
@@ -32,7 +32,7 @@ On the left side you can find the different Best Practice checks like Cost, CIS 
 Thirith policies can be used for different purposes. In this section we will see, what happens when policies pass or fail.
 
 ### Pass or Fail 
-Navigate in the **Orchestrator** to **Policies**. Open **define-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met - **Action when policy errors**. 
+Navigate in the **Develop** to **Policies**. Open **define-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met - **Action when policy errors**. 
 When a new policy is introduced, it might be advisable to just **Warn** the user to follow it. After some weeks it might be necessary to drive correct behaviour and enable the **Approval Process**. This keeps the workflow from deploying until the approving person(s) cleared or declined the request. For security or regulatory policies it could be necessary to set a strict **Fail**, in this case the workflow is stopped before deploying resources to the cloud accounts. 
 
 ![Policy Actions](image/policy-actions.png)  
@@ -88,7 +88,7 @@ _Fig. Activate policy on Workflow Group_
 
 
 ### Rerun EKS Node Deployment 
-Now we are going to rerun the EKS Node deployment in the Stack and see how the policy is applied. To do that go to Orchestrator > Workflow Groups >  wfg-xx > Stacks > eks-xx > terraform-aws-eks-managed-node-group-stripped. Once inside the workflow you see the policy being applied. Now click the Triangle-button followed by **Run Workflow**.
+Now we are going to rerun the EKS Node deployment in the Stack and see how the policy is applied. To do that go to Deploy > Workflow Groups >  wfg-xx > Stacks > eks-xx > terraform-aws-eks-managed-node-group-stripped. Once inside the workflow you see the policy being applied. Now click the Triangle-button followed by **Run Workflow**.
 
 ![Run workflow](image/run-workflow.png)  
 _Fig. Run Workflow_  

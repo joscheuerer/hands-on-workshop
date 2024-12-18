@@ -90,23 +90,21 @@ In this exercise you will use the previously created template.
 Put yourself in the shoes of a Cloud Consumer or Developer, who is not much into IaC syntax. The NoCode interface allows non-IaC-experts to use IaC.
 
 ### Deploy infrastructure from template
-Change back into the **orchestrator** by going to the left top corner and clicking on the waffle iron (**9dots**).
-Use the triangle next to Dev Portal and click **Launch Workflow** in the menubar.
+Click **Dev Portal** icon on left navbar to go to the created template.
 
 1. Source Type: **Subscribed Templates**
 2. Choose a Subscribed Template: ``vpc``
 3. Select your **vpc-template-xx** and under template revision the latest revision.
-4. The form below should have the following entries:
+4. Workflow Group Name = ``wfg-xx``
+5. Workflow Name = ``new-vpc-xx`` (this is the name for the resource in the StackGuardian interface)
+6. click **Next**
+7. The form below should have the following entries:
     * VPC Name = ``new-vpc-xx``
     * Region with Availabilty Zones =  _choose one_
-5. Click **Next**
+8. Click **Next**
 ---
 
-6. Under Deployment Environment select the connector = **AWS-Deploy-Role**
-7. **Next**
----
-8. Workflow Group Name = ``wfg-xx``
-9. Workflow Name = ``new-vpc-xx`` (this is the name for the resource in the StackGuardian interface)
+9. Under Deployment Environment select the connector = **AWS-Deploy-Role**
 10. **Next**
 ---
 11. Review the configuration and click **Launch**

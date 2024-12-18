@@ -17,7 +17,7 @@ In this section, we are going to work git centric.
 This section shows how deployments and tests can be started from git.
 
 ### Setup triggers
-Let's navigate to your existing workflow from the first usecase by choosing **Workflow Groups** in the sidebar. 
+Let's navigate to your existing workflow from the first usecase by clicking on **Deploy** icon then choosing **Workflow Groups** in the navbar. 
 Select your workflow group **wfg-xx**, and then the workflow **repo-vpc-xx**. 
 Choose the tab **Settings** and **Advanced Options**. 
 
@@ -42,3 +42,4 @@ By setting the triggers the following will happen:
 ### Pull request
 Once all participants completed the setup, your StackGuardian Host will share the screen and create the pull request.
 This will start your workflow and ask you for your approval. Go ahead and approve the run.
+
