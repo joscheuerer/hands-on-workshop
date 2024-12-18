@@ -90,6 +90,7 @@ In this exercise you will use the previously created template.
 Put yourself in the shoes of a Cloud Consumer or Developer, who is not much into IaC syntax. The NoCode interface allows non-IaC-experts to use IaC.
 
 ### Deploy infrastructure from template
+
 Click **Dev Portal** icon on left navbar to go to the created template.
 
 1. Source Type: **Subscribed Templates**
@@ -105,12 +106,8 @@ Click **Dev Portal** icon on left navbar to go to the created template.
 ---
 
 9. Under Deployment Environment select the connector = **AWS-Deploy-Role**
-10. **Next**
----
-11. Review the configuration and click **Launch**
----
-12. To run the workflow choose the **Terraform Action: Create** and click **Quick Run**
----
+10. Review the configuration and click **Launch**
+
 
 In the **Runs** tab you can now follow the deployment. Once the VPC is ready, the Status will change to **Completed**. 
 
