@@ -1,4 +1,4 @@
-# Usecase 4 - Create and Enforce Guardrails
+# Usecase 5 - Create and Enforce Guardrails
 
 ## Overview - What's in the section?
 Time: ~30 minutes  
@@ -11,34 +11,34 @@ The aim of this part is to demonstrate the following:
 * Approval process and exception handling 
 * Drift detection and continuous compliance
 
-![Usecase 4](image/usecase4.png)
+![Usecase 5](image/usecase4.png)
 _Fig. Create and enforce proactive policies_
 
-## 4.1 - Identify current shortcomings
+## 5.1 - Identify current shortcomings
 ### Description
 Indepent of the way the infrastructure in the Cloud Accounts is created, StackGuardian is analysing it in regards to Cost, Security, Compliance & Best Practises. 
 
 ### Integrations page
-In the **Orchestrator** go to the **Integrations** tab and choose the **AWS-ReadOnly** account. 
+In the left navbar go to **Connectors** >> **Cloud Providers** and choose the **AWS-ReadOnly** account. 
 
-![Integrations](image/integrations.png)
-_Fig. Integrations page in Orchestrator_
+![Integrations](image/connectors.png)
+_Fig. Cloud connectors page in Orchestrator_
 
 
 On the left side you can find the different Best Practice checks like Cost, CIS and PCI DSS. While on the right side you can go into more details to find out about specific **Fails** and how to mitigate them in the future with a proper **Build Tirith Policy**. Explore the integrations page for yourself and with the instructors. 
 
-## 4.2 - Tirith policies to pass or fail 
+## 5.2 - Tirith policies to pass or fail 
 ### Description
 Thirith policies can be used for different purposes. In this section we will see, what happens when policies pass or fail.
 
 ### Pass or Fail 
-Navigate in the **Orchestrator** to **Policies**. Open **define-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met. 
+Navigate in the **Develop** to **Policies**. Open **define-tags-eks-node** and change to the **Rules** tab. The first part shows, what will happen if a deployment is within the guardrails and passes but also what should happen when the guardrails are not met - **Action when policy errors**. 
 When a new policy is introduced, it might be advisable to just **Warn** the user to follow it. After some weeks it might be necessary to drive correct behaviour and enable the **Approval Process**. This keeps the workflow from deploying until the approving person(s) cleared or declined the request. For security or regulatory policies it could be necessary to set a strict **Fail**, in this case the workflow is stopped before deploying resources to the cloud accounts. 
 
 ![Policy Actions](image/policy-actions.png)  
 _Fig. Passing or Failing the policy_  
 
-## 4.3 - Tirith policies to guardrail IaC attributes
+## 5.3 - Tirith policies to guardrail IaC attributes
 ### Description
 We will look at a policy for terraform resources and attributes itself and see how it is structured.
 
@@ -53,19 +53,19 @@ Explore the policy settings further.
 _Fig. Tirith Policy for Tags_  
 
 
-## 4.4 - Tirith policy on terraform action
+## 5.4 - Tirith policy on terraform action
 ### Description
 Policies can also be based on terraform actions, i.e. create or delete.
 
 ### Policy based on terraform action
-On the policy page select **prevent-vpc-destroy** and to the **Rules**. 
-In this policy the Operation Type changed to **Check for terraform action**. It is evaluating, if the action on resource **aws_vpc** is **delete**. This would mean that only a delete operation is allowed on the terraform resource. But there is a way to invert this with the **Final Expression**. ``!eval-id-1`` means that every operation is allowed but **NOT** a delete operation.
+On the policy page select **prevent-vpc-destroy** and go to **Rules**. 
+In this policy the Operation Type changed to **Check for terraform action**. It is evaluating, if the action on resource **aws_vpc** is **not equal** to **delete**. This policy prevents resources to be deleted by accident. When the Approval process is activated, the 4 eyes principle can be implemented for resources in production.
 
 ![Terraform Action](image/policy-delete.png)  
 _Fig. Policy to prevent deletion of resources_  
 
 
-## 4.5 - Tirith policy on Cost
+## 5.5 - Tirith policy on Cost
 ### Description
 In this paragraph we will look into a cost policy. Currently we are evaluating the static cost for resources but we are working on dynamic cost calculation. 
 ### Cost policies
@@ -77,18 +77,18 @@ _Fig. Tirith Policy for Cost_
 
 
 
-## 4.6 - Activate Policies on Workflow Groups
+## 5.6 - Activate Policies on Workflow Groups
 ### Description
 After investigating the policies, now is the time to apply them to different workflows and see the result. 
 ### Activate Policy
-On the Policy page click on the three lines next to **define-tags-eks-node** and choose **Clone**. As Resource Name for the cloned policy enter ``define-tags-eks-node-xx`` and **Create**. On the Meta tab of the new policy open **Workflow Groups**, then click your own **wfg-xx** and select **All current & future stacks & Workflows**.  Hit **Save** 
+On the Policy page select the radio button in front of **define-tags-eks-node** and choose **Options** >> **Clone**. As Resource Name for the cloned policy enter ``define-tags-eks-node-xx`` and **Create**. On the Meta tab of the new policy open **Workflow Groups**, then click your own **wfg-xx** and select **All current & future stacks & Workflows**.  Hit **Save** 
 
 ![Activate Policy](image/activate-policy.png)  
 _Fig. Activate policy on Workflow Group_  
 
 
 ### Rerun EKS Node Deployment 
-Now we are going to rerun the EKS Node deployment in the Stack and see how the policy is applied. To do that go to Orchestrator > Workflow Groups >  wfg-xx > Stacks > eks-xx > terraform-aws-eks-managed-node-group-stripped. Once inside the workflow you see the policy being applied. Now click the Triangle-button followed by **Run Workflow**.
+Now we are going to rerun the EKS Node deployment in the Stack and see how the policy is applied. To do that go to Deploy > Workflow Groups >  wfg-xx > Stacks > eks-xx > terraform-aws-eks-managed-node-group-stripped. Once inside the workflow you see the policy being applied. Now click the Triangle-button followed by **Run Workflow**.
 
 ![Run workflow](image/run-workflow.png)  
 _Fig. Run Workflow_  
