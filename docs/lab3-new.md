@@ -90,28 +90,25 @@ In this exercise you will use the previously created template.
 Put yourself in the shoes of a Cloud Consumer or Developer, who is not much into IaC syntax. The NoCode interface allows non-IaC-experts to use IaC.
 
 ### Deploy infrastructure from template
-Change back into the **orchestrator** by going to the left top corner and clicking on the waffle iron (**9dots**).
-Use the triangle next to Dev Portal and click **Launch Workflow** in the menubar.
+Click on the **Dev Portal** icon on the navbar to select the template for the deploymet.
 
 1. Source Type: **Subscribed Templates**
 2. Choose a Subscribed Template: ``vpc``
-3. Select your **vpc-template-xx** and under template revision the latest revision.
-4. The form below should have the following entries:
+3. Workflow Group Name = ``wfg-xx``
+4. Workflow Name = ``new-vpc-xx`` (this is the name for the resource in the StackGuardian interface)
+5. Click **Next**
+6. Select your **vpc-template-xx** and under template revision the latest revision.
+7. The form below should have the following entries:
     * VPC Name = ``new-vpc-xx``
     * Region with Availabilty Zones =  _choose one_
-5. Click **Next**
+8. Click **Next**
 ---
 
-6. Under Deployment Environment select the connector = **AWS-Deploy-Role**
-7. **Next**
+9. Under Deployment Environment select the connector = **AWS-Deploy-Role**
 ---
-8. Workflow Group Name = ``wfg-xx``
-9. Workflow Name = ``new-vpc-xx`` (this is the name for the resource in the StackGuardian interface)
-10. **Next**
+10. Review the configuration and click **Launch**
 ---
-11. Review the configuration and click **Launch**
----
-12. To run the workflow choose the **Terraform Action: Create** and click **Quick Run**
+11. To run the workflow choose the **Terraform Action: Create** and click **Quick Run**
 ---
 
 In the **Runs** tab you can now follow the deployment. Once the VPC is ready, the Status will change to **Completed**. 
