@@ -41,23 +41,22 @@ When filling a form and no specific values are mentioned, then just leave the de
 1. Click on your newly created workflow group **wfg-xx** 
 2. Click the button **Create Workflow** >> **Use Wizard** >> **Terraform**.
 3. Choose **Git Repository**
-4. Under Git Repository for Version Control select **github_com**
-5. For Github Account, select **StackGuardian** from the drop down list.
-6. Repository URL: ``https://github.com/StackGuardian/terraform-aws-vpc`` 
-7. Click **Next**
+4. Under Git Repository for Version Control select **Github Others (SSH, Secrets or Public Repo)**
+5. Repository URL: ``https://github.com/StackGuardian/terraform-aws-vpc`` 
+6. Click **Next**
 ![Deployfromrepo](./image/Deployfromrepo.png)
 _Fig. Choose Repository to deploy from_
 ---
-8. Choose connector = **AWS-Deploy-Role**
-9. Click **Next** 
+7. Choose connector = **AWS-Deploy-Role**
+8. Click **Next** 
 ---
-10. **Workflow Name** = ``repo-vpc-xx``
-11. The rest leave unchanged.
-12. Hit **Next**
+9. **Workflow Name** = ``repo-vpc-xx``
+10. The rest leave unchanged.
+11. Hit **Next**
 ---
-13. Review the settings and **Launch**
+12. Review the settings and **Launch**
 ---
-14. Choose **Terraform Action: Create** and **Quick Run** to start the deployment.
+13. Choose **Terraform Action: Create** and **Quick Run** to start the deployment.
 ---
 
 
