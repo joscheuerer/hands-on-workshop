@@ -25,7 +25,7 @@ Every participant will receive a two digit number (xx) for the workshop. You wil
 
 ### Create your own Workflow Group
 A workflow group is like your own project, where you will be deploying resources into. It is also used to enforce policies later on. 
-On the left side of the screen click **Workflow Groups**. In there **Create Workflow Group** with **Resource Name** = ``wfg-xx`` (xx is your assigned number)
+On the nav bar of the screen, click on **Deploy** and then click on **Workflow Groups**. In there **Create Workflow Group** with **Resource Name** = ``wfg-xx`` (xx is your assigned number)
 
 If you like, you can add Tags and descriptions to it as well. 
 
@@ -41,10 +41,10 @@ When filling a form and no specific values are mentioned, then just leave the de
 1. Click on your newly created workflow group **wfg-xx** 
 2. Click the button **Create Workflow** >> **Use Wizard** >> **Terraform**.
 3. Choose **Git Repository**
-4. Under Git Repository select **github_com**
+4. Under Git Repository for Version Control select **Github Others (SSH, Secrets or Public Repo)**
 5. Repository URL: ``https://github.com/StackGuardian/terraform-aws-vpc`` 
 6. Click **Next**
-![Deployfromrepo](image/deployfromrepo.png)
+![Deployfromrepo](./image/Deployfromrepo.png)
 _Fig. Choose Repository to deploy from_
 ---
 7. Choose connector = **AWS-Deploy-Role**
