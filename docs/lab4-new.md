@@ -29,17 +29,17 @@ In the sidebar click on **Dev Portal**. This will bring you to the Developer Por
 
 ---
 
-3. Workflow Group Name: **wfg-xx**  
+3. Workflow Group Name: **wfg-xx** 
 4. Stack Name: ``full-stack-xx``. 
 Click **Next**.
 
 ---
 
 5. In Variable Settings insert:
-   * VPC name: **vpc-xx**
+   * VPC name: **vpc-xx**  (xx is your assigned number)
    * Region: **Frankfurt**
-   * Cluster Name: **cluster-xx**
-   * Cluster Version: **1.29**
+   * Cluster Name: **cluster-xx** (xx is your assigned number)
+   * Cluster Version: **1.31**
 Click **Next**.
 
 ---
