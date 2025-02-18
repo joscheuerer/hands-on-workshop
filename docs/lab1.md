@@ -43,9 +43,11 @@ When filling a form and no specific values are mentioned, then just leave the de
 3. Choose **Git Repository**
 4. Under Git Repository for Version Control select **Github Others (SSH, Secrets or Public Repo)**
 5. Repository URL: ``https://github.com/StackGuardian/terraform-aws-vpc`` 
-6. Click **Next**
-![Deployfromrepo](image/Deployfromrepo.png)
+6. Click **Next** 
+
+![Deployfromrepo](image/deployfromrepo.png)
 _Fig. Choose Repository to deploy from_
+
 ---
 7. Choose connector = **AWS-Deploy-Role**
 8. Click **Next** 
