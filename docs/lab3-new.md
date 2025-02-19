@@ -56,7 +56,6 @@ Now copy the code below and overwrite the brackets ``{}`` in the **Form JSON Sch
             "type": "string",
             "description": "The region to deploy to",
             "title": "Region",
-            "default": "",
             "enumNames": [
                 "Frankfurt",
                 "Ireland"
