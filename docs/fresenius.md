@@ -46,8 +46,32 @@ Well done! This is all that is necessary to deploy the whole building-block.
 
 ## 4.2 - Update deployed VM
 
-In the sidebar click on **Deploy** followed by **Worgflowgroup**. Choose **Fresenius-Demo**
+In the sidebar click on **Deploy** followed by **Workflowgroup**. Choose **Fresenius-Demo** and then select the Tab **Stacks**.
 
 <img width="1122" alt="image" src="https://github.com/user-attachments/assets/0d24239d-c772-4ffd-9b58-b9025a7035f1" />
 
+Here you find all the deployments of the webserver from you and all the other participants of the workshop. Click your **webserver-xx** (xx is your assigned number). In the top right corner you can open **Run Stack** and choose **Modify and Run**. 
 
+<img width="306" alt="image" src="https://github.com/user-attachments/assets/01018cdd-01d7-4ed6-b306-0138275242e2" />
+
+1. Click **Next**
+
+---
+
+2. Change the size of the VM from Small (2core) to **Medium (4core)**.
+3. **Next**
+
+---
+
+4. Click **Run**
+
+The changes will be applied to the infrastructureand increasing the size of the VM. 
+
+
+## 4.3 - Destroy the whole environment including VM
+
+Currently you should be inside of your deployed Stack where it looks like this: 
+
+<img width="1383" alt="image" src="https://github.com/user-attachments/assets/217e04f5-b7e9-4ec2-ae72-e5466b17da0d" />
+
+To destroy the environment you just need to to click **Run Stack** and **Destroy**. This will remove all the resources on Azure in reverse order. Please go ahead and do that. 
