@@ -1,4 +1,4 @@
-# Usecases Fresenius - Deploy and Update with StackGuardian Developer Portal
+# Usecases Fresenius
 
 ## Overview - What's in the section?
 Time: ~15 minutes  
@@ -14,24 +14,22 @@ In this workshop you will run the following usecases:
 In the sidebar click on **Dev Portal**. This will bring you to the Developer Portal, which allows anybody in the organisation to deploy infrastructure & applications. 
 
 1. In the **Template Type** dropdown choose **IAC Groups**
-2. **Use** the **aws-full-stack**
-
-![IaC Group](image/use-aws-full-stack.png)  
- _Fig. Use aws-full-stack_  
+2. **Use** the **azure-vnet-vm-webserver**
 
 ---
 
-3. Workflow Group Name: **wfg-xx** 
-4. Stack Name: ``full-stack-xx``. 
+3. Workflow Group Name: **Fresenius-Demo** 
+4. Stack Name: **Webserver-xx**. xx is the placeholder for the Pod-number you received
 Click **Next**.
 
 ---
 
-5. In Variable Settings insert:
-   * VPC name: **vpc-xx**  (xx is your assigned number)
-   * Region: **Frankfurt**
-   * Cluster Name: **cluster-xx** (xx is your assigned number)
-   * Cluster Version: **1.31**
+5. Name of Resourcegroup: **rg-xx** (xx is your assigned number)
+6. Azure Region to deploy to: **Germany West Central**
+7. Vnet Name: **vnet-xx**
+8. Name of VM: **vm-xx**
+9. Size of VM: **Small (2core)**
+
 Click **Next**.
 
 ---
