@@ -1,7 +1,6 @@
 # Usecases Fresenius
 
-## Overview - What's in the section?
-Time: ~15 minutes  
+## Overview - What's in the section? 
 
 In this workshop you will run the following usecases:
 
