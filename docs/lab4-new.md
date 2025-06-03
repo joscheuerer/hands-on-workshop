@@ -19,7 +19,7 @@ _Fig. Build Architectures in StackGuardian_
 Until now we were only dealing with single level templates which are VPCs, VMs, Storage Accounts, Resource Groups .... Now we are arranging them into production-grade building-blocks, which allows organisations to standardize their deployments. 
 
 ### VPC, EKS-Cluster with Worker-Node and Webserver
-In the sidebar click on **Dev Portal**. This will bring you to the Developer Portal, which allows anybody in the organisation to deploy infrastructure & applications (without Coding experience). 
+In the navbar click on **Dev Portal**. This will bring you to the Developer Portal, which allows anybody in the organisation to deploy infrastructure & applications (without Coding experience). 
 
 1. In the **Template Type** dropdown choose **IAC Groups**
 2. **Use** the **aws-full-stack**
