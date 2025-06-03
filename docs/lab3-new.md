@@ -56,7 +56,6 @@ Now copy the code below and overwrite the brackets ``{}`` in the **Form JSON Sch
             "type": "string",
             "description": "The region to deploy to",
             "title": "Region",
-            "default": "",
             "enumNames": [
                 "Frankfurt",
                 "Ireland"
@@ -78,7 +77,7 @@ Now copy the code below and overwrite the brackets ``{}`` in the **Form JSON Sch
 ```
 
 Once completed you can choose **Show Form** to see how the interface will look for the endusers. 
-Don't forget to **Save & Create New Revision**, which will provide a new version of the template on the left hand side. 
+Click on **Save**, to save the changes. 
 Also **Subscribe** to this template, to make it available for endusers. Before subscribing to it, the template can not be deployed by endusers.
 
 ![NoCode interface](image/save-create-subscribe.png) 
@@ -90,6 +89,7 @@ In this exercise you will use the previously created template.
 Put yourself in the shoes of a Cloud Consumer or Developer, who is not much into IaC syntax. The NoCode interface allows non-IaC-experts to use IaC.
 
 ### Deploy infrastructure from template
+
 Click on the **Dev Portal** icon on the navbar to select the template for the deploymet.
 
 1. Source Type: **Subscribed Templates**

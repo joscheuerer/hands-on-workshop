@@ -19,7 +19,9 @@ _Fig. Create and enforce proactive policies_
 Indepent of the way the infrastructure in the Cloud Accounts is created, StackGuardian is analysing it in regards to Cost, Security, Compliance & Best Practises. 
 
 ### Integrations page
+
 In the left navbar go to **Connectors** >> **Cloud Providers** and choose the **AWS-ReadOnly** account. 
+
 
 ![Integrations](image/connectors.png)
 _Fig. Cloud connectors page in Orchestrator_
